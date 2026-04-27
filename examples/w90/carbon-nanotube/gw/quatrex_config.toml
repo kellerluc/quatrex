@@ -8,7 +8,7 @@ transport_direction = 'x'
 block_size = 32
 
 [scba] # ===============================================================
-max_iterations = 2
+max_iterations = 10
 mixing_factor = 0.5
 
 coulomb_screening = true
@@ -17,20 +17,20 @@ phonon = true
 symmetric = true
 
 [outputs] # Select which outputs to write.
-electron_ldos = true
+electron_ldos = false                   # changed
 contact_currents = true
-device_currents = true
+device_currents = false                 # changed
 electron_density = false
 hole_density = false
 
-polarization_density = true
-coulomb_screening_density = true
+polarization_density = false            # changed
+coulomb_screening_density = false       # changed
 
-self_energy_density = true
+self_energy_density = false             # changed
 
 # If enabled, the profiling stats will take a bit of time to crunch the
 # numbers.
-save_profiling_results = true
+save_profiling_results = false          # changed
 
 
 [electron] # ===========================================================
@@ -113,3 +113,6 @@ interaction_cutoff = 5.5     # Å
 model = "pseudo-scattering"
 phonon_energy = 50e-3
 deformation_potential = 5e-3
+
+[compute]                 # changed
+num_bits = 48             # changed

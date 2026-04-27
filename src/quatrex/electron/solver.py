@@ -581,6 +581,13 @@ class ElectronSolver(SubsystemSolver):
                 with profiler.profile_range(
                     label="ElectronSolver: Band edges", level="default", comm=comm
                 ):
+                    test = xp.isinf(sse_retarded.data)
+                    test2 = xp.isnan(sse_retarded.data)
+                    if xp.any(test) or xp.any(test2):
+                        print(
+                            f"Warning: Non-finite values detected in retarded self-energy. {comm.rank} {self.call_count}",
+                            flush=True,
+                        )
                     left_band_edges, right_band_edges = find_renormalized_eigenvalues(
                         hamiltonian=self.hamiltonian,
                         overlap=self.overlap_sparray,

@@ -1,5 +1,6 @@
 # Copyright (c) 2024-2026 ETH Zurich and the authors of the quatrex package.
 
+import csv
 import os
 from dataclasses import dataclass, field
 
@@ -1016,6 +1017,15 @@ class SCBA:
                 global_comm.Allreduce(usage, average_usage, op=MPI.SUM)
                 global_comm.Allreduce(usage, max_usage, op=MPI.MAX)
                 average_usage /= comm.size
+                
+                # Calculate exact memory in bytes for CSV logging
+                used_memory = total_memory - free_memory
+                used_memory_array = np.array([used_memory], dtype=np.float64)
+                avg_used_memory = np.empty(1, dtype=np.float64)
+                max_used_memory = np.empty(1, dtype=np.float64)
+                global_comm.Allreduce(used_memory_array, avg_used_memory, op=MPI.SUM)
+                global_comm.Allreduce(used_memory_array, max_used_memory, op=MPI.MAX)
+                avg_used_memory[0] /= comm.size
 
                 if comm.rank == 0:
                     print(
@@ -1026,6 +1036,29 @@ class SCBA:
                         f"Max device memory usage: {max_usage[0] * 100:.4f}%",
                         flush=True,
                     )
+                    
+                    benchmark_csv = os.environ.get("QUATREX_BENCHMARK_MEMORY_CSV")
+                    if benchmark_csv:
+                        csv_exists = os.path.exists(benchmark_csv)
+                        with open(benchmark_csv, "a", newline="") as csv_file:
+                            writer = csv.writer(csv_file)
+                            if not csv_exists:
+                                writer.writerow(
+                                    [
+                                        "run_index",
+                                        "iteration",
+                                        "rank_average_device_memory_usage_bytes",
+                                        "max_device_memory_usage_bytes",
+                                    ]
+                                )
+                            writer.writerow(
+                                [
+                                    os.environ.get("QUATREX_BENCHMARK_RUN_INDEX", ""),
+                                    i,
+                                    int(avg_used_memory[0]),
+                                    int(max_used_memory[0]),
+                                ]
+                            )
 
             if i % self.config.scba.output_interval == 0:
                 self._write_iteration_outputs(i)

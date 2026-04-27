@@ -7,12 +7,17 @@ from qttools import NDArray
 
 BLOCK_SIZE = 256
 
+# Set to 1 to use narrow precision compression (7-bit exponent, bias 116, range ~2^-115 to ~1024)
+# Set to 0 to use standard precision compression (8-bit exponent, bias 127, range ~2^-1022 to ~2^1024)
+USE_NARROW_PRECISION = 1
+
 cuda_source = f"""
 #include <cupy/complex.cuh>
+#define USE_NARROW_PRECISION {1 if USE_NARROW_PRECISION else 0}
 
-template<int T>
+template<int T, int NUM_EXP_BITS, int BIAS>
 __global__
-void _compress(unsigned char* out, const complex<double>* inp, const size_t N) {{
+void _compress_impl(unsigned char* out, const complex<double>* inp, const size_t N) {{
     static const int num_bytes = T / 8;
     __shared__ unsigned char s_out[{BLOCK_SIZE} * num_bytes * 2];
 
@@ -34,28 +39,27 @@ void _compress(unsigned char* out, const complex<double>* inp, const size_t N) {
             unsigned long long exp_64 = (bits_64 >> 52) & 0x7FFULL;
             unsigned long long mant_64 = bits_64 & 0xFFFFFFFFFFFFFULL;
 
-            const int num_exponent_bits = 9; 
-            const int num_mantissa_bits = T - num_exponent_bits;
+            const int num_mantissa_bits = T - NUM_EXP_BITS - 1;
             const int shift = 52 - num_mantissa_bits;
             
             unsigned int exp_f;
             unsigned long long mant_trunc = mant_64 >> shift;
 
             if (exp_64 == 0x7FFULL) {{
-                exp_f = 0xFF;
+                exp_f = (1U << NUM_EXP_BITS) - 1;  // All 1s for exponent
                 if (mant_64 != 0) {{
                     mant_trunc = (1ULL << (num_mantissa_bits - 1));
                 }}
             }} else {{
                 int unbiased_exp = (int)exp_64 - 1023;
-                int biased_f = unbiased_exp + 127;
+                int biased_f = unbiased_exp + BIAS;
 
                 if (biased_f <= 0) {{
                     exp_f = 0;
                     mant_trunc = 0;
-                }} else if (biased_f >= 0xFF) {{
-                    exp_f = 0xFF;
-                    mant_trunc = 0;
+                }} else if (biased_f >= (1 << NUM_EXP_BITS) - 1) {{
+                    exp_f = (1U << NUM_EXP_BITS) - 2;  // Max normal exponent (avoid infinity)
+                    mant_trunc = (1ULL << num_mantissa_bits) - 1;  // Max mantissa
                 }} else {{
                     exp_f = (unsigned int)biased_f;
                     // Round to Nearest Even
@@ -65,12 +69,14 @@ void _compress(unsigned char* out, const complex<double>* inp, const size_t N) {
                         mant_trunc++;
                         if (mant_trunc >= (1ULL << num_mantissa_bits)) {{
                             mant_trunc = 0; exp_f++;
-                            if (exp_f >= 0xFF) {{ exp_f = 0xFF; mant_trunc = 0; }}
+                            if (exp_f >= (1U << NUM_EXP_BITS) - 1) {{ exp_f = (1U << NUM_EXP_BITS) - 2; mant_trunc = (1ULL << num_mantissa_bits) - 1; }}
                         }}
                     }}
                 }}
             }}
-            unsigned int sgn_exp = (static_cast<unsigned int>(sign) << 8) | (exp_f & 0xFF);
+            // Ensure exp_f never reaches all-1s (which encodes inf/nan)
+            exp_f = min(exp_f, (1U << NUM_EXP_BITS) - 2);
+            unsigned int sgn_exp = (static_cast<unsigned int>(sign) << NUM_EXP_BITS) | (exp_f & ((1U << NUM_EXP_BITS) - 1));
             packed_vals[v] = ((unsigned long long)sgn_exp << num_mantissa_bits) | (mant_trunc & ((1ULL << num_mantissa_bits) - 1));
         }}
 
@@ -88,9 +94,23 @@ void _compress(unsigned char* out, const complex<double>* inp, const size_t N) {
     }}
 }}
 
+// Standard precision: 8 bits exponent, bias 127
 template<int T>
 __global__
-void _decompress(complex<double>* out, const unsigned char* inp, const size_t N) {{
+void _compress_standard(unsigned char* out, const complex<double>* inp, const size_t N) {{
+    _compress_impl<T, 8, 127>(out, inp, N);
+}}
+
+// Narrow precision: 7 bits exponent, bias 116, range 10^-29 to 100
+template<int T>
+__global__
+void _compress_narrow(unsigned char* out, const complex<double>* inp, const size_t N) {{
+    _compress_impl<T, 7, 116>(out, inp, N);
+}}
+
+template<int T, int NUM_EXP_BITS, int BIAS>
+__global__
+void _decompress_impl(complex<double>* out, const unsigned char* inp, const size_t N) {{
     static const int num_bytes = T / 8;
     __shared__ unsigned char s_inp[{BLOCK_SIZE} * num_bytes * 2];
 
@@ -112,17 +132,18 @@ void _decompress(complex<double>* out, const unsigned char* inp, const size_t N)
                 packed |= (unsigned long long)s_inp[base_s_idx + i] << (8 * i);
             }}
 
-            const int num_exponent_bits = 9;
-            const int num_mantissa_bits = T - num_exponent_bits;
+            const int num_mantissa_bits = T - NUM_EXP_BITS - 1;
             const int shift = 52 - num_mantissa_bits;
 
             unsigned int sgn_exp_f = (unsigned int)(packed >> num_mantissa_bits);
-            unsigned long long sign = (sgn_exp_f >> 8) & 1;
-            unsigned long long exp_f = sgn_exp_f & 0xFF;
+            unsigned long long sign = (sgn_exp_f >> NUM_EXP_BITS) & 1;
+            unsigned long long exp_f = sgn_exp_f & ((1U << NUM_EXP_BITS) - 1);
             unsigned long long mant_bits = packed & ((1ULL << num_mantissa_bits) - 1);
 
             unsigned long long exp_d;
-            if (exp_f == 0xFF) {{
+            unsigned int inf_exp_f = (1U << NUM_EXP_BITS) - 1;  // All 1s = inf/nan
+            
+            if (exp_f == inf_exp_f) {{
                 exp_d = 0x7FF;
                 if (mant_bits != 0) {{
                     mant_bits = (1ULL << (num_mantissa_bits - 1));
@@ -131,9 +152,15 @@ void _decompress(complex<double>* out, const unsigned char* inp, const size_t N)
                 }}
             }}
             else{{
-                if (exp_f == 0) exp_d = 0;
-                //else if (exp_f == 0xFF) exp_d = 0x7FF;
-                else exp_d = exp_f + (1023 - 127);
+                if (exp_f == 0) {{
+                    exp_d = 0;
+                }} else {{
+                    exp_d = exp_f + (1023 - BIAS);
+                    // Clamp to valid double exponent range (max normal exponent is 1023, field value 2046)
+                    // For narrow precision: exp_d reaches 126 + 907 = 1033 (safely within range)
+                    // For standard precision: exp_d reaches 254 + 896 = 1150 (safely within range)
+                    if (exp_d >= 2047) exp_d = 2046;  // Prevent infinity
+                }}
             }}
             // Shift bits back to the high-order position of the 52-bit mantissa
             unsigned long long mant_d = mant_bits << shift;
@@ -144,20 +171,52 @@ void _decompress(complex<double>* out, const unsigned char* inp, const size_t N)
     }}
 }}
 
-extern "C" {{
-    __global__ void _compress_fp16(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<16>(out, inp, N); }}
-    __global__ void _compress_fp24(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<24>(out, inp, N); }}
-    __global__ void _compress_fp32(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<32>(out, inp, N); }}
-    __global__ void _compress_fp40(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<40>(out, inp, N); }}
-    __global__ void _compress_fp48(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<48>(out, inp, N); }}
-    __global__ void _compress_fp56(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress<56>(out, inp, N); }}
+// Standard precision: 8 bits exponent, bias 127
+template<int T>
+__global__
+void _decompress_standard(complex<double>* out, const unsigned char* inp, const size_t N) {{
+    _decompress_impl<T, 8, 127>(out, inp, N);
+}}
 
-    __global__ void _decompress_fp16(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<16>(out, inp, N); }}
-    __global__ void _decompress_fp24(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<24>(out, inp, N); }}
-    __global__ void _decompress_fp32(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<32>(out, inp, N); }}
-    __global__ void _decompress_fp40(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<40>(out, inp, N); }}
-    __global__ void _decompress_fp48(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<48>(out, inp, N); }}
-    __global__ void _decompress_fp56(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress<56>(out, inp, N); }}
+// Narrow precision: 7 bits exponent, bias 116, range 10^-29 to 100
+template<int T>
+__global__
+void _decompress_narrow(complex<double>* out, const unsigned char* inp, const size_t N) {{
+    _decompress_impl<T, 7, 116>(out, inp, N);
+}}
+
+extern "C" {{
+    #if USE_NARROW_PRECISION
+    // Narrow precision kernels (7-bit exponent, bias 116)
+    __global__ void _compress_fp16(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<16>(out, inp, N); }}
+    __global__ void _compress_fp24(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<24>(out, inp, N); }}
+    __global__ void _compress_fp32(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<32>(out, inp, N); }}
+    __global__ void _compress_fp40(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<40>(out, inp, N); }}
+    __global__ void _compress_fp48(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<48>(out, inp, N); }}
+    __global__ void _compress_fp56(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_narrow<56>(out, inp, N); }}
+
+    __global__ void _decompress_fp16(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<16>(out, inp, N); }}
+    __global__ void _decompress_fp24(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<24>(out, inp, N); }}
+    __global__ void _decompress_fp32(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<32>(out, inp, N); }}
+    __global__ void _decompress_fp40(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<40>(out, inp, N); }}
+    __global__ void _decompress_fp48(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<48>(out, inp, N); }}
+    __global__ void _decompress_fp56(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_narrow<56>(out, inp, N); }}
+    #else
+    // Standard precision kernels (8-bit exponent, bias 127)
+    __global__ void _compress_fp16(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<16>(out, inp, N); }}
+    __global__ void _compress_fp24(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<24>(out, inp, N); }}
+    __global__ void _compress_fp32(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<32>(out, inp, N); }}
+    __global__ void _compress_fp40(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<40>(out, inp, N); }}
+    __global__ void _compress_fp48(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<48>(out, inp, N); }}
+    __global__ void _compress_fp56(unsigned char* out, const complex<double>* inp, const size_t N) {{ _compress_standard<56>(out, inp, N); }}
+
+    __global__ void _decompress_fp16(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<16>(out, inp, N); }}
+    __global__ void _decompress_fp24(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<24>(out, inp, N); }}
+    __global__ void _decompress_fp32(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<32>(out, inp, N); }}
+    __global__ void _decompress_fp40(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<40>(out, inp, N); }}
+    __global__ void _decompress_fp48(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<48>(out, inp, N); }}
+    __global__ void _decompress_fp56(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_standard<56>(out, inp, N); }}
+    #endif
 }}
 """
 
@@ -176,8 +235,8 @@ _kernels = {
 def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     """Compresses complex128 data to a custom floating point format.
     It is specified by the number of bits where
-    1 bit is for the sign, 8 bits are for the exponent (same as fp32) and
-    the rest of the bits are for the mantissa (taken from fp64).
+    1 bit is for the sign, the exponent bits depend on the precision mode (8 bits for standard, 7 bits for narrow),
+    and the rest of the bits are for the mantissa (taken from fp64).
 
     Parameters
     ----------
@@ -249,8 +308,8 @@ def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
 def decompress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     """Decompresses data from a custom floating point format to complex128.
     The custom floating point format is specified by the number of bits where
-    1 bit is for the sign, 8 bits are for the exponent (same as fp32) and
-    the rest of the bits are for the mantissa (taken from fp64).
+    1 bit is for the sign, the exponent bits depend on the precision mode (8 bits for standard, 7 bits for narrow),
+    and the rest of the bits are for the mantissa (taken from fp64).
 
     Parameters
     ----------
