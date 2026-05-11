@@ -17,7 +17,7 @@ def test_compression(n: int, batch_shape: tuple[int, ...], out_flag: bool, bits:
     A_ref = A_ref.astype(xp.complex128)
 
     if out_flag:
-        out = xp.empty(A_ref.shape + (2 * (bits // 8),), dtype=xp.uint8)
+        out = xp.empty(A_ref.shape + (((2 * bits) + 7) // 8,), dtype=xp.uint8)
     else:
         out = None
 
@@ -40,7 +40,7 @@ def test_compression(n: int, batch_shape: tuple[int, ...], out_flag: bool, bits:
 @pytest.mark.skipif(xp.__name__ != "cupy", reason="Requires cupy backend")
 def test_zeroing(n: int, batch_shape: tuple[int, ...], out_flag: bool, bits: int):
 
-    out = xp.empty((*batch_shape, n) + (2 * (bits // 8),), dtype=xp.uint8)
+    out = xp.empty((*batch_shape, n) + (((2 * bits) + 7) // 8,), dtype=xp.uint8)
 
     out[:] = 0
 
@@ -144,14 +144,14 @@ def test_float32(n: int, batch_shape: tuple[int, ...], out_flag: bool):
     A_ref[12] = xp.inf + 1j * -1.234e-40
 
     if out_flag:
-        out = xp.empty(A_ref.shape + (2 * (bits // 8),), dtype=xp.uint8)
+        out = xp.empty(A_ref.shape + (((2 * bits) + 7) // 8,), dtype=xp.uint8)
     else:
         out = None
 
     out = compress(A_ref, bits, out=out)
 
     A_test = A_ref.astype(xp.complex64).copy()
-    A_test = A_test.view(xp.uint8).reshape(A_ref.shape + (2 * (bits // 8),))
+    A_test = A_test.view(xp.uint8).reshape(A_ref.shape + (((2 * bits) + 7) // 8,))
 
     # check for bitwise equality of compressed data
     assert xp.array_equal(out, A_test)

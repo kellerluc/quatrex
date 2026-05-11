@@ -1030,7 +1030,7 @@ class ComputeConfig(BaseModel):
     def set_num_mantissa_bytes(self) -> Self:
 
         if self.num_bits is not None:
-            if self.num_bits % 8 != 0:
+            if self.num_bits % 1 != 0:
                 raise ValueError(
                     "The total number of bits (exponent + mantissa) should be a multiple of 8 for alignment."
                     f"Got {self.num_bits} bits."

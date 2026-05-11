@@ -8,7 +8,7 @@ transport_direction = 'x'
 block_size = 32
 
 [scba] # ===============================================================
-max_iterations = 10
+max_iterations = 3
 mixing_factor = 0.5
 
 coulomb_screening = true
@@ -47,7 +47,7 @@ band_edge_tracking = "eigenvalues"
 # Energy grid.
 energy_window_min = -10
 energy_window_max = 0
-energy_window_num = 100
+energy_window_num = 1000
 
 solver.algorithm = "rgf"
 solver.max_batch_size = 1000
@@ -115,4 +115,4 @@ phonon_energy = 50e-3
 deformation_potential = 5e-3
 
 [compute]                 # changed
-num_bits = 48             # changed
+num_bits = 24             # changed

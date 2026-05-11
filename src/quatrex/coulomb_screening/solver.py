@@ -111,7 +111,16 @@ class CoulombScreeningSolver(SubsystemSolver):
             bits=config.compute.num_bits,
         )
         dummy_dsbsparse.allocate_data()
-        dummy_dsbsparse.data[:] = 1.0
+
+        
+        # dummy_dsbsparse.data[:] = 1.0
+        if dummy_dsbsparse.bits is None:
+            dummy_dsbsparse.data[:] = 1.0
+        else:
+            dummy_ones = xp.ones(dummy_dsbsparse.data.shape[:-1], dtype=xp.complex128)
+            dummy_dsbsparse.data[:] = compress(dummy_ones, dummy_dsbsparse.bits)
+
+
 
         v_times_p_sparsity_pattern = _compute_sparsity_pattern(
             dummy_dsbsparse, dummy_dsbsparse, dtype=xp.float32

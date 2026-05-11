@@ -40,6 +40,7 @@ from quatrex.photon import PhotonSolver, PiPhoton
 
 profiler = Profiler()
 
+SAVE_INTERMEDIATES = False  # Set to True to save intermediate results for compression testing.
 
 class SCBAData:
     """Data container class for the SCBA.
@@ -354,6 +355,18 @@ class SCBA:
                     / config.coulomb_screening.epsilon_r,
                     config.compute.num_bits,
                 )
+            # save data to try compression algorithms
+            if comm.rank == 0 and SAVE_INTERMEDIATES == True:
+
+                print("Saving intermediates... coulomb matrix")
+                save_dir = "/scratch/luckeller/thesis/bachelor-thesis/build/quatrex/intermediates"
+                
+                os.makedirs(save_dir, exist_ok=True)
+
+                np.save(
+                    os.path.join(save_dir, "coulomb_matrix_compressed.npy"),
+                    coulomb_matrix._data,
+                )
 
             energies_path = self.config.input_dir / "coulomb_screening_energies.npy"
             if os.path.isfile(energies_path):
@@ -387,6 +400,28 @@ class SCBA:
                 self.config,
                 self.coulomb_screening_energies,
             )
+            # # --- DEBUGGING START ---
+            # if comm.rank == 0:
+            #     print("\n" + "="*50)
+            #     print("DEBUGGING: Sparsity pattern for Coulomb Screening")
+                
+            #     # Check the actual matrix data
+            #     # Check if the internal data array is empty or all zeros
+            #     nnz = np.count_nonzero(coulomb_matrix._data)
+            #     print(f"Coulomb matrix shape: {coulomb_matrix.shape}")
+            #     print(f"Coulomb matrix non-zero count: {nnz}")
+
+
+            #     # Check the energy grid
+            #     if hasattr(self, 'coulomb_screening_energies'):
+            #         print(f"Screening energies shape: {self.coulomb_screening_energies.shape}")
+                
+            #     # Check if we have any sparsity pattern at all
+            #     # Replace 'v_times_p_sparsity_pattern' with the actual variable name 
+            #     # if it's available in this scope, or check the matrix directly.
+            #     print("="*50 + "\n")
+            # # --- DEBUGGING END ---
+
             self.coulomb_screening_solver = CoulombScreeningSolver(
                 self.config,
                 coulomb_matrix,
@@ -525,6 +560,27 @@ class SCBA:
                     self.data.sigma_greater.data[i] - self.data.sigma_lesser.data[i]
                 )
 
+        # save data to try compression algorithms
+        if comm.rank == 0 and SAVE_INTERMEDIATES == True:
+
+            print("Saving intermediates... symmetrized sigma")
+            save_dir = "/scratch/luckeller/thesis/bachelor-thesis/build/quatrex/intermediates"
+                
+            os.makedirs(save_dir, exist_ok=True)
+
+            np.save(
+                os.path.join(save_dir, "sigma_lesser.npy"),
+                self.data.sigma_lesser._data,
+            )
+            np.save(
+                os.path.join(save_dir, "sigma_greater.npy"),
+                self.data.sigma_greater._data,
+            )
+            np.save(
+                os.path.join(save_dir, "sigma_retarded.npy"),
+                self.data.sigma_retarded._data,
+            )
+
     @profiler.profile(label="SCBA: Update Sigma", level="default", comm=comm)
     def _update_sigma(self) -> None:
         """Updates the self-energy with a mixing factor."""
@@ -583,9 +639,33 @@ class SCBA:
                     i
                 ]
 
+        # save data to try compression algorithms
+        if comm.rank == 0 and SAVE_INTERMEDIATES == True:
+
+            print("Saving intermediates... updated sigma")
+            save_dir = "/scratch/luckeller/thesis/bachelor-thesis/build/quatrex/intermediates"
+                
+            os.makedirs(save_dir, exist_ok=True)
+
+            np.save(
+                os.path.join(save_dir, "updated_sigma_lesser.npy"),
+                self.data.sigma_lesser._data,
+            )
+            np.save(
+                os.path.join(save_dir, "updated_sigma_greater.npy"),
+                self.data.sigma_greater._data,
+            )
+            np.save(
+                os.path.join(save_dir, "updated_sigma_retarded.npy"),
+                self.data.sigma_retarded._data,
+            )
+
     @profiler.profile(label="SCBA: Convergence test", level="default", comm=comm)
     def _has_converged(self) -> bool:
         """Checks if the SCBA has converged."""
+        if comm.rank == 0:
+            print(f"Checking convergence...", flush=True)
+        
         # Infinity norm of the self-energy update.
         local_max_diff = np.zeros(1)
 
@@ -608,8 +688,8 @@ class SCBA:
         max_diff = np.empty_like(local_max_diff)
         global_comm.Allreduce(local_max_diff, max_diff, op=MPI.MAX)
 
-        i_left = xp.real(self.observables.electron_current.get("left", 0.0))
-        i_right = xp.real(self.observables.electron_current.get("right", 0.0))
+        i_left = xp.real(self.observables.electron_current.get("left", 0.0)) if self.observables.electron_current else 0.0
+        i_right = xp.real(self.observables.electron_current.get("right", 0.0)) if self.observables.electron_current else 0.0
 
         dE = self.electron_energies[1] - self.electron_energies[0]
         current_diff = xp.abs(xp.sum(i_left) * dE + xp.sum(i_right) * dE)
@@ -624,8 +704,9 @@ class SCBA:
         if comm.rank == 0:
             print(f"Maximum Self-Energy Update: {max_diff}", flush=True)
             print(f"Contact Current Difference: {current_diff}", flush=True)
-            # print(f"Current Conservation abs: {current_conservation_abs}", flush=True)
-            # print(f"Current Conservation rel: {current_conservation_rel}", flush=True)
+            if self.observables.electron_current:
+                print(f"  Left contact current: {xp.real(self.observables.electron_current.get('left', 0.0))}", flush=True)
+                print(f"  Right contact current: {xp.real(self.observables.electron_current.get('right', 0.0))}", flush=True)
 
         return False  # TODO: :-)
 
@@ -951,6 +1032,29 @@ class SCBA:
                     self.data.sigma_retarded,
                     out=(self.data.g_lesser, self.data.g_greater, self.data.g_retarded),
                 )
+                # save data to try compression algorithms
+                if comm.rank == 0 and SAVE_INTERMEDIATES == True:
+
+                    print("Saving intermediates... g")
+                    save_dir = "/scratch/luckeller/thesis/bachelor-thesis/build/quatrex/intermediates"
+                        
+                    os.makedirs(save_dir, exist_ok=True)
+
+                    np.save(
+                        os.path.join(save_dir, "g_lesser.npy"),
+                        self.data.g_lesser._data,
+                    )
+                    np.save(
+                        os.path.join(save_dir, "g_greater.npy"),
+                        self.data.g_greater._data,
+                    )
+                    np.save(
+                        os.path.join(save_dir, "g_retarded.npy"),
+                        self.data.g_retarded._data,
+                    )
+
+                # try to compress g 
+                
                 self._compute_electron_observables()
                 self.electron_solver.hamiltonian.set_to_device()
 
@@ -1010,6 +1114,21 @@ class SCBA:
             self.data.sigma_retarded_prev._host_data = None
 
             if xp.__name__ == "cupy":
+
+                # CuPy-specific memory usage start ----------------------------------
+                mempool = xp.get_default_memory_pool()
+                cupy_used_bytes = np.array([mempool.used_bytes()], dtype=np.float64)
+                cupy_limit_bytes = np.array([mempool.get_limit()], dtype=np.float64)
+
+                avg_cupy_used = np.empty(1, dtype=np.float64)
+                max_cupy_used = np.empty(1, dtype=np.float64)
+
+                global_comm.Allreduce(cupy_used_bytes, avg_cupy_used, op=MPI.SUM)
+                global_comm.Allreduce(cupy_used_bytes, max_cupy_used, op=MPI.MAX)
+
+                avg_cupy_used[0] /= comm.size
+                # CuPy-specific memory usage end ----------------------------------
+
                 free_memory, total_memory = xp.cuda.Device().mem_info
                 usage = np.array((total_memory - free_memory) / total_memory)
                 average_usage = np.empty(1)
@@ -1036,6 +1155,11 @@ class SCBA:
                         f"Max device memory usage: {max_usage[0] * 100:.4f}%",
                         flush=True,
                     )
+                    print(
+                        f"CuPy memory - Average used: {avg_cupy_used[0] / 1e9:.2f} GB, "
+                        f"Max used: {max_cupy_used[0] / 1e9:.2f} GB",
+                        flush=True,
+                    )
                     
                     benchmark_csv = os.environ.get("QUATREX_BENCHMARK_MEMORY_CSV")
                     if benchmark_csv:
@@ -1047,21 +1171,23 @@ class SCBA:
                                     [
                                         "run_index",
                                         "iteration",
-                                        "rank_average_device_memory_usage_bytes",
-                                        "max_device_memory_usage_bytes",
+                                        "rank_average_cupy_used_bytes",
+                                        "max_cupy_used_bytes",
                                     ]
                                 )
                             writer.writerow(
                                 [
                                     os.environ.get("QUATREX_BENCHMARK_RUN_INDEX", ""),
                                     i,
-                                    int(avg_used_memory[0]),
-                                    int(max_used_memory[0]),
+                                    int(avg_cupy_used[0]),
+                                    int(max_cupy_used[0]),
                                 ]
                             )
 
             if i % self.config.scba.output_interval == 0:
                 self._write_iteration_outputs(i)
+
+
 
         else:  # Did not break, i.e. max_iterations reached.
             if comm.rank == 0:

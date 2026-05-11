@@ -254,7 +254,7 @@ class DSDBSparse(ABC):
         #         max(stack_section_sizes),
         #         *global_stack_shape[1:],
         #         total_nnz_size,
-        #         2 * (self.bits // 8),
+        #         ((2 * self.bits) + 7) // 8,
         #     )
         #     data_dtype = xp.uint8
 
@@ -913,7 +913,7 @@ class DSDBSparse(ABC):
 
         if self.bits is not None:
             self._data = self._data.reshape(
-                self._data.shape[:-1] + (-1, 2 * (self.bits // 8))
+                self._data.shape[:-1] + (-1, ((2 * self.bits) + 7) // 8)
             )
 
     @abstractmethod
@@ -990,7 +990,7 @@ class DSDBSparse(ABC):
                         stack_size,
                         *self.global_stack_shape[1:],
                         self.total_nnz_size,
-                        2 * (self.bits // 8),
+                        ((2 * self.bits) + 7) // 8,
                     ),
                     dtype=xp.uint8,
                 )
@@ -1020,7 +1020,7 @@ class DSDBSparse(ABC):
                         stack_size,
                         *self.global_stack_shape[1:],
                         self.total_nnz_size,
-                        2 * (self.bits // 8),
+                        ((2 * self.bits) + 7) // 8,
                     ),
                     dtype=xp.uint8,
                 )
