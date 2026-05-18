@@ -1,0 +1,3361 @@
+Mon May 18 10:46:16 CEST 2026
+
+                   _                 
+  __ _ _   _  __ _| |_ _ __ _____  __
+ / _` | | | |/ _` | __| '__/ _ \ \/ /
+| (_| | |_| | (_| | |_| | |  __/>  < 
+ \__, |\__,_|\__,_|\__|_|  \___/_/\_\
+    |_|                              
+                        version 0.0.1
+
+[
+    {
+        'user_api': 'blas',
+        'internal_api': 'openblas',
+        'num_threads': 1,
+        'prefix': 'libscipy_openblas',
+        'filepath': 
+'/users/luckeller/miniconda3/lib/python3.13/site-packages/numpy.libs/libscipy_op
+enblas64_-7220728c.so',
+        'version': '0.3.31.188.0',
+        'threading_layer': 'pthreads',
+        'architecture': 'neoversev2'
+    },
+    {
+        'user_api': 'openmp',
+        'internal_api': 'openmp',
+        'num_threads': 1,
+        'prefix': 'libgomp',
+        'filepath': '/users/luckeller/miniconda3/lib/libgomp.so.1.0.0',
+        'version': None
+    },
+    {
+        'user_api': 'blas',
+        'internal_api': 'openblas',
+        'num_threads': 1,
+        'prefix': 'libscipy_openblas',
+        'filepath': 
+'/users/luckeller/miniconda3/lib/python3.13/site-packages/scipy.libs/libscipy_op
+enblas-c5a9b014.so',
+        'version': '0.3.30',
+        'threading_layer': 'pthreads',
+        'architecture': 'neoversev2'
+    }
+]
+Grid shape: (768, 3)
+Block size: 32
+Max Interaction Cutoff: 8.0
+Number of connected blocks: 2
+Energy window: -40.0 to 30.0 eV with 17500 grid points.
+Resolution is 0.004000228584487786 eV.
+Each comm.block has 437 grid points.
+Grid shape: (768, 3)
+Block size: 32
+Max Interaction Cutoff: 8.0
+Number of connected blocks: 2
+Entering SCBA loop...
+len(G)  43840
+len(MG)  87440
+len(H)  36240
+len(MW)  116760
+len(L)  80280
+Iteration 0
+Updating conduction band edges: -3.566287437922706, -3.7664972263994554
+Free GiB: 93.358, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.671, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.21020928]
+Contact Current Difference: 1.8851873219835266e-06
+  Left contact current: [0. 0. 0. ... 0. 0. 0.]
+  Right contact current: [0. 0. 0. ... 0. 0. 0.]
+Rank-average device memory usage: 2.2251%
+Max device memory usage: 2.4509%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 0...
+Iteration 1
+Updating conduction band edges: -3.4966895271961675, -3.6983346934106005
+Free GiB: 92.885, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.667, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.10169173]
+Contact Current Difference: 0.00032032117848812807
+  Left contact current: [7.59218265e-34 3.21958858e-34 2.46242646e-34 ... 3.50476234e-34
+ 2.05685433e-34 9.25349384e-34]
+  Right contact current: [ 8.17907976e-34  3.61371831e-34  3.81959250e-34 ... -3.66849499e-36
+  4.72471914e-35  4.08597926e-34]
+Rank-average device memory usage: 2.2170%
+Max device memory usage: 2.5687%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 1...
+Iteration 2
+Updating conduction band edges: -3.461349008062343, -3.6641263196782368
+Free GiB: 92.864, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.499, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.05002058]
+Contact Current Difference: 0.00039933100364837257
+  Left contact current: [3.05210250e-29 1.30629881e-29 1.28585937e-29 ... 3.63211863e-30
+ 1.20045629e-30 8.07329679e-30]
+  Right contact current: [3.31153817e-29 7.99455930e-30 1.33913177e-29 ... 2.35590635e-30
+ 2.29205151e-30 5.41713902e-30]
+Rank-average device memory usage: 2.2411%
+Max device memory usage: 2.4559%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 2...
+Iteration 3
+Updating conduction band edges: -3.4433684695781435, -3.646580416183589
+Free GiB: 92.803, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.02492836]
+Contact Current Difference: 0.0003739228584265985
+  Left contact current: [2.97771717e-28 1.20136615e-28 7.43798354e-29 ... 5.66002491e-29
+ 5.51440548e-29 9.81941032e-29]
+  Right contact current: [3.28445977e-28 5.74297412e-29 6.47320686e-29 ... 1.41474374e-29
+ 2.81075492e-29 7.82441732e-29]
+Rank-average device memory usage: 2.2101%
+Max device memory usage: 2.5421%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 3...
+Iteration 4
+Updating conduction band edges: -3.4341586787696237, -3.6376062180144975
+Free GiB: 92.885, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.479, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.01256208]
+Contact Current Difference: 0.00028957595851277374
+  Left contact current: [7.80349086e-28 1.73312783e-28 2.33458520e-28 ... 1.60995127e-28
+ 1.40410436e-28 4.57692430e-28]
+  Right contact current: [1.00912490e-27 1.60809855e-28 1.69060069e-28 ... 1.80169683e-28
+ 1.14293185e-28 4.09442998e-28]
+Rank-average device memory usage: 2.1780%
+Max device memory usage: 2.4509%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 4...
+Iteration 5
+Updating conduction band edges: -3.4294510123120534, -3.6330155716473844
+Free GiB: 92.784, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00645977]
+Contact Current Difference: 0.00020626908532168572
+  Left contact current: [1.24210652e-27 3.29215492e-28 3.26717998e-28 ... 3.94185963e-28
+ 3.15255572e-28 7.82044996e-28]
+  Right contact current: [2.01965448e-27 4.07624176e-28 4.50964513e-28 ... 1.71950730e-28
+ 2.57003414e-29 6.96271362e-28]
+Rank-average device memory usage: 2.2053%
+Max device memory usage: 2.5691%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 5...
+Iteration 6
+Updating conduction band edges: -3.427003224360416, -3.6306761051504126
+Free GiB: 92.778, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.671, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00332377]
+Contact Current Difference: 0.00014664984489033434
+  Left contact current: [2.14632555e-27 6.20560147e-28 5.94644029e-28 ... 5.61917729e-28
+ 5.78936080e-28 1.20129292e-27]
+  Right contact current: [3.10048391e-27 6.69798622e-29 1.85161113e-28 ... 3.93241729e-28
+ 1.73057282e-28 1.28903877e-27]
+Rank-average device memory usage: 2.1774%
+Max device memory usage: 2.4478%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 6...
+Iteration 7
+Updating conduction band edges: -3.425755360026545, -3.6294763555246625
+Free GiB: 92.885, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00174402]
+Contact Current Difference: 8.806325648315263e-05
+  Left contact current: [2.72246889e-27 5.86342027e-28 3.93027037e-28 ... 5.53427362e-28
+ 6.04116621e-28 1.44207591e-27]
+  Right contact current: [3.95244860e-27 9.08848789e-28 7.51546554e-28 ... 2.43655164e-28
+ 3.08429497e-29 1.36694073e-27]
+Rank-average device memory usage: 2.2260%
+Max device memory usage: 2.4561%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 7...
+Iteration 8
+Updating conduction band edges: -3.4251030976619865, -3.6288410517288994
+Free GiB: 92.885, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.727, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00090441]
+Contact Current Difference: 5.5403496694248974e-05
+  Left contact current: [3.23870782e-27 7.94620205e-28 5.32847981e-28 ... 8.74858442e-28
+ 8.83971207e-28 1.72282249e-27]
+  Right contact current: [3.86373865e-27 6.52411319e-28 7.74909087e-28 ... 5.84470909e-28
+ 2.86641297e-28 1.79423045e-27]
+Rank-average device memory usage: 2.2193%
+Max device memory usage: 2.5547%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 8...
+Iteration 9
+Updating conduction band edges: -3.424757846048005, -3.6285190337684363
+Free GiB: 92.925, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.404, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00047062]
+Contact Current Difference: 3.4436236078701395e-05
+  Left contact current: [3.48931662e-27 6.89610171e-28 8.64659381e-28 ... 9.69423910e-28
+ 7.17546586e-28 1.89797390e-27]
+  Right contact current: [ 4.46834661e-27  7.08400612e-28  1.24439862e-27 ...  7.31048230e-28
+ -2.04586748e-30  1.67868417e-27]
+Rank-average device memory usage: 2.2335%
+Max device memory usage: 2.4677%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 9...
+Iteration 10
+Updating conduction band edges: -3.4245796672979085, -3.6283619104993017
+Free GiB: 92.798, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.486, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.00025325]
+Contact Current Difference: 2.089145038986634e-05
+  Left contact current: [3.83574682e-27 5.81310476e-28 1.14428685e-27 ... 1.22675697e-27
+ 7.97185881e-28 1.79680998e-27]
+  Right contact current: [ 4.47992303e-27  8.82243934e-28  8.62392993e-28 ...  6.11406159e-28
+ -1.21539277e-28  1.69143154e-27]
+Rank-average device memory usage: 2.2272%
+Max device memory usage: 2.4808%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 10...
+Iteration 11
+Updating conduction band edges: -3.424488469116322, -3.628283534659144
+Free GiB: 92.880, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.556, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [0.0001371]
+Contact Current Difference: 1.2274304270750575e-05
+  Left contact current: [4.58663224e-27 8.43306624e-28 1.40105110e-27 ... 7.09229553e-28
+ 4.16562104e-28 1.56614404e-27]
+  Right contact current: [4.71954500e-27 1.05205918e-27 1.67082351e-27 ... 7.41835287e-28
+ 2.25150910e-28 1.64093646e-27]
+Rank-average device memory usage: 2.2163%
+Max device memory usage: 2.6672%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 11...
+Iteration 12
+Updating conduction band edges: -3.4244438547747365, -3.6282454951137395
+Free GiB: 92.861, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.64600057e-05]
+Contact Current Difference: 7.198743172292729e-06
+  Left contact current: [4.27094254e-27 6.02137020e-28 1.12247989e-27 ... 3.23113678e-28
+ 2.61176650e-28 1.71978955e-27]
+  Right contact current: [4.91330184e-27 1.12852067e-27 1.93556076e-27 ... 6.48085729e-28
+ 9.37375944e-29 1.70127034e-27]
+Rank-average device memory usage: 2.2372%
+Max device memory usage: 2.6467%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 12...
+Iteration 13
+Updating conduction band edges: -3.424420863653924, -3.6282285093392486
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.861, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [4.09525119e-05]
+Contact Current Difference: 4.018547472153279e-06
+  Left contact current: [4.23149025e-27 5.12903561e-28 7.29892196e-28 ... 6.95790441e-28
+ 4.32645609e-28 2.04512814e-27]
+  Right contact current: [ 5.18300874e-27  1.12722010e-27  2.17788570e-27 ...  3.49703445e-28
+ -1.26108445e-29  1.55950262e-27]
+Rank-average device memory usage: 2.2049%
+Max device memory usage: 2.4652%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 13...
+Iteration 14
+Updating conduction band edges: -3.424409183525245, -3.628220102327798
+Free GiB: 92.968, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.501, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [2.44445908e-05]
+Contact Current Difference: 2.325084527703483e-06
+  Left contact current: [5.46146207e-27 1.31608105e-27 9.75917693e-28 ... 7.85478742e-28
+ 3.67111130e-28 1.65358220e-27]
+  Right contact current: [4.26752436e-27 5.28162890e-28 1.30624706e-27 ... 5.27769219e-28
+ 3.54332949e-28 1.74368678e-27]
+Rank-average device memory usage: 2.2141%
+Max device memory usage: 2.5744%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 14...
+Iteration 15
+Updating conduction band edges: -3.4244035860534394, -3.628215806676182
+Free GiB: 92.806, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.411, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [1.65525007e-05]
+Contact Current Difference: 1.2958090909323886e-06
+  Left contact current: [4.77593429e-27 1.01766211e-27 7.00095529e-28 ... 8.11128179e-28
+ 6.54551179e-28 2.09181088e-27]
+  Right contact current: [4.80460234e-27 1.06938459e-27 1.63019955e-27 ... 7.70129043e-28
+ 2.47741376e-28 1.19526959e-27]
+Rank-average device memory usage: 2.2202%
+Max device memory usage: 2.5806%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 15...
+Iteration 16
+Updating conduction band edges: -3.4244010828858404, -3.6282138616161226
+Free GiB: 92.806, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [1.07895932e-05]
+Contact Current Difference: 7.894627923245995e-07
+  Left contact current: [ 4.92059452e-27  1.25272819e-27  1.50973120e-27 ... -4.03110257e-29
+  2.35678142e-28  1.61460814e-27]
+  Right contact current: [4.62330438e-27 8.72662198e-28 1.27249686e-27 ... 6.13520734e-28
+ 1.67690538e-28 1.33224611e-27]
+Rank-average device memory usage: 2.2147%
+Max device memory usage: 2.4944%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 16...
+Iteration 17
+Updating conduction band edges: -3.424399342393469, -3.628213081749621
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 4.0080509813075066e-07
+  Left contact current: [4.07663295e-27 2.26073713e-28 8.09053848e-28 ... 7.38311885e-28
+ 7.89438592e-28 2.09819009e-27]
+  Right contact current: [4.88844034e-27 1.09614653e-27 6.77536120e-28 ... 8.23595376e-28
+ 6.27685148e-28 1.47772163e-27]
+Rank-average device memory usage: 2.2159%
+Max device memory usage: 2.4672%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 17...
+Iteration 18
+Updating conduction band edges: -3.424398691839773, -3.6282132287044546
+Free GiB: 92.886, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.548, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.394261169226918e-07
+  Left contact current: [ 4.49107486e-27  3.91822393e-28  6.34330622e-28 ... -2.19972758e-28
+  7.56669136e-28  2.06270601e-27]
+  Right contact current: [5.14450434e-27 1.43029877e-27 9.39832545e-28 ... 8.59582815e-28
+ 8.00534607e-28 1.44040581e-27]
+Rank-average device memory usage: 2.2510%
+Max device memory usage: 2.5311%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 18...
+Iteration 19
+Updating conduction band edges: -3.424398847593406, -3.62821349373465
+Free GiB: 92.835, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.359, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 8.895541286652736e-08
+  Left contact current: [4.82310357e-27 4.18353440e-28 1.06911461e-27 ... 2.45629746e-28
+ 1.11622496e-27 2.18372680e-27]
+  Right contact current: [5.08103118e-27 1.15956245e-27 1.45801627e-27 ... 1.16262539e-27
+ 4.57751326e-28 1.63761797e-27]
+Rank-average device memory usage: 2.2482%
+Max device memory usage: 2.4675%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 19...
+Iteration 20
+Updating conduction band edges: -3.4243987945533867, -3.6282135944913456
+Free GiB: 92.753, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.544, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.8954163053409162e-07
+  Left contact current: [4.40095918e-27 8.50330474e-28 1.04376106e-27 ... 1.99895715e-28
+ 1.46570052e-28 2.11638524e-27]
+  Right contact current: [4.86575212e-27 1.35006118e-27 1.56072863e-27 ... 8.25389262e-28
+ 3.46780546e-28 1.56917540e-27]
+Rank-average device memory usage: 2.2619%
+Max device memory usage: 2.4671%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 20...
+Iteration 21
+Updating conduction band edges: -3.4243987130194715, -3.6282135893736207
+Free GiB: 92.759, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.372, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.3546415272500112e-08
+  Left contact current: [4.68937447e-27 1.14308971e-27 1.22292323e-27 ... 5.14614602e-28
+ 4.36749026e-28 1.77404877e-27]
+  Right contact current: [5.02692188e-27 1.42683629e-27 1.93782118e-27 ... 6.43266358e-28
+ 2.87769239e-28 1.66044031e-27]
+Rank-average device memory usage: 2.2191%
+Max device memory usage: 2.4676%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 21...
+Iteration 22
+Updating conduction band edges: -3.4243988354448804, -3.6282136480776437
+Free GiB: 92.677, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.677, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 8.703526427258218e-08
+  Left contact current: [5.04986928e-27 1.29043915e-27 1.05849439e-27 ... 5.56898311e-28
+ 3.24512680e-28 1.91063578e-27]
+  Right contact current: [5.41755032e-27 1.60965005e-27 1.51391329e-27 ... 7.25452275e-28
+ 3.37672277e-28 1.92543406e-27]
+Rank-average device memory usage: 2.2427%
+Max device memory usage: 2.5783%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 22...
+Iteration 23
+Updating conduction band edges: -3.4243987095012054, -3.628213508760166
+Free GiB: 92.785, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.689, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 6.322328425980434e-08
+  Left contact current: [4.75395301e-27 1.57137112e-27 1.05679739e-27 ... 6.57302899e-28
+ 2.41082795e-30 1.66661282e-27]
+  Right contact current: [5.11365059e-27 8.71140180e-28 1.16180965e-27 ... 8.73636855e-28
+ 3.35647524e-28 2.02169379e-27]
+Rank-average device memory usage: 2.2241%
+Max device memory usage: 2.4839%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 23...
+Iteration 24
+Updating conduction band edges: -3.424398795900807, -3.6282133938356096
+Free GiB: 92.886, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.290, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.106283000883862e-08
+  Left contact current: [4.96284653e-27 1.39037673e-27 1.39962353e-27 ... 8.10998043e-28
+ 7.12840588e-28 2.01012737e-27]
+  Right contact current: [5.63572185e-27 2.62773974e-27 2.06626038e-27 ... 2.98428794e-28
+ 2.23228136e-28 1.53309081e-27]
+Rank-average device memory usage: 2.2638%
+Max device memory usage: 2.5314%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 24...
+Iteration 25
+Updating conduction band edges: -3.4243987796404096, -3.6282133514102775
+Free GiB: 92.595, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.474, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 4.1967014241355016e-08
+  Left contact current: [4.49246171e-27 8.69803585e-28 6.45486470e-28 ... 1.22845455e-27
+ 1.20400585e-27 1.99473983e-27]
+  Right contact current: [5.71650124e-27 1.35404648e-27 1.68731493e-27 ... 4.84762804e-28
+ 1.78961200e-28 1.58736876e-27]
+Rank-average device memory usage: 2.2290%
+Max device memory usage: 2.4940%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 25...
+Iteration 26
+Updating conduction band edges: -3.4243988586577543, -3.628213422205965
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.581, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 2.0251112071989485e-08
+  Left contact current: [4.97506393e-27 5.95216669e-28 9.88360173e-28 ... 1.08064570e-27
+ 7.59651802e-28 1.90108349e-27]
+  Right contact current: [5.66067683e-27 1.05779929e-27 1.13934890e-27 ... 6.39485498e-28
+ 2.65122738e-28 1.66357942e-27]
+Rank-average device memory usage: 2.2650%
+Max device memory usage: 2.4916%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 26...
+Iteration 27
+Updating conduction band edges: -3.4243988440211055, -3.6282133879404097
+Free GiB: 92.886, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.499, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 9.669200942610118e-08
+  Left contact current: [4.56697208e-27 4.01866081e-28 6.53868006e-28 ... 7.86467591e-28
+ 2.07117159e-28 2.04676619e-27]
+  Right contact current: [5.24115749e-27 9.94041118e-28 1.47442494e-27 ... 6.12376304e-28
+ 1.42533778e-28 1.65034760e-27]
+Rank-average device memory usage: 2.2339%
+Max device memory usage: 2.4916%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 27...
+Iteration 28
+Updating conduction band edges: -3.4243988647164056, -3.6282134270399964
+Free GiB: 92.697, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.373, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 3.386041977967297e-08
+  Left contact current: [4.24667987e-27 5.68335090e-28 1.68378474e-27 ... 8.88082714e-28
+ 7.78062816e-28 2.20862992e-27]
+  Right contact current: [5.72017243e-27 8.87936332e-28 1.36773185e-27 ... 8.68758520e-28
+ 1.89181366e-28 1.50137645e-27]
+Rank-average device memory usage: 2.2315%
+Max device memory usage: 2.4838%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 28...
+Iteration 29
+Updating conduction band edges: -3.4243989090396245, -3.628213426401603
+Free GiB: 92.678, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.469, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.018258200587846e-08
+  Left contact current: [4.03453381e-27 1.30523529e-27 1.08154890e-27 ... 1.26414072e-27
+ 8.14066192e-28 2.01945464e-27]
+  Right contact current: [5.12102558e-27 1.12617807e-27 1.54579541e-27 ... 7.51406890e-28
+ 2.94342611e-28 1.57637649e-27]
+Rank-average device memory usage: 2.2184%
+Max device memory usage: 2.4752%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 29...
+Iteration 30
+Updating conduction band edges: -3.4243988987095895, -3.6282134070899796
+Free GiB: 92.683, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.658, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.2033576399835683e-07
+  Left contact current: [4.28870294e-27 1.03575451e-27 7.94060247e-28 ... 1.34020371e-27
+ 5.28894659e-28 2.27727703e-27]
+  Right contact current: [5.17208226e-27 1.16033764e-27 1.08603644e-27 ... 8.81760098e-28
+ 4.63827573e-28 1.81783607e-27]
+Rank-average device memory usage: 2.2340%
+Max device memory usage: 2.5390%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 30...
+Iteration 31
+Updating conduction band edges: -3.424398913710151, -3.6282134262346237
+Free GiB: 92.765, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.455, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 7.920318956244898e-09
+  Left contact current: [4.85561133e-27 9.46155537e-28 9.28922588e-28 ... 1.23900136e-27
+ 5.79410574e-28 2.30068825e-27]
+  Right contact current: [5.36131158e-27 1.70101059e-27 1.37682945e-27 ... 6.23804692e-28
+ 2.35602944e-28 1.75489207e-27]
+Rank-average device memory usage: 2.2540%
+Max device memory usage: 2.4702%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 31...
+Iteration 32
+Updating conduction band edges: -3.424398917882971, -3.6282134433473283
+Free GiB: 92.867, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.359, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 5.538070134338685e-08
+  Left contact current: [4.72108319e-27 8.92574278e-28 1.03644734e-27 ... 1.14585131e-27
+ 7.64560992e-28 2.23781325e-27]
+  Right contact current: [ 5.36630888e-27  1.95312085e-27  1.79096212e-27 ... -8.56375163e-29
+ -7.43407264e-29  1.41260441e-27]
+Rank-average device memory usage: 2.2387%
+Max device memory usage: 2.5371%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 32...
+Iteration 33
+Updating conduction band edges: -3.4243989401274098, -3.6282134308544904
+Free GiB: 92.861, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.347, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.2273625955069173e-07
+  Left contact current: [3.87238679e-27 8.57358727e-28 1.33156915e-27 ... 1.03623079e-27
+ 4.94891557e-28 2.41553013e-27]
+  Right contact current: [5.04385608e-27 1.47300146e-27 1.68356417e-27 ... 1.66591333e-28
+ 2.03408762e-28 1.62173575e-27]
+Rank-average device memory usage: 2.2220%
+Max device memory usage: 2.4672%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 33...
+Iteration 34
+Updating conduction band edges: -3.424398924584118, -3.62821345377334
+Free GiB: 92.652, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.652, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.9019585617476714e-07
+  Left contact current: [4.32740958e-27 7.30770487e-28 5.13855717e-28 ... 1.45681444e-27
+ 5.84930895e-28 3.04855011e-27]
+  Right contact current: [4.39501201e-27 9.11216464e-28 7.88252490e-28 ... 1.00327130e-27
+ 1.07345463e-27 2.41768968e-27]
+Rank-average device memory usage: 2.2320%
+Max device memory usage: 2.4385%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 34...
+Iteration 35
+Updating conduction band edges: -3.424398843310654, -3.6282134776721393
+Free GiB: 92.760, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.652, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.25288813555935e-07
+  Left contact current: [4.54898641e-27 1.12676915e-27 1.13972984e-27 ... 1.12406468e-27
+ 9.14310041e-28 2.56138393e-27]
+  Right contact current: [4.94668767e-27 1.17928550e-27 1.33680636e-27 ... 1.11777004e-27
+ 9.86824142e-28 2.33176133e-27]
+Rank-average device memory usage: 2.2123%
+Max device memory usage: 2.5598%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 35...
+Iteration 36
+Updating conduction band edges: -3.4243988530467524, -3.6282134747015338
+Free GiB: 92.867, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.746, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 2.272773571287967e-07
+  Left contact current: [4.92465517e-27 1.18729478e-27 1.02396211e-27 ... 1.43556440e-27
+ 1.17739587e-27 2.40059362e-27]
+  Right contact current: [5.72399188e-27 1.59319450e-27 1.38518878e-27 ... 7.19829930e-28
+ 1.32384666e-28 1.93963527e-27]
+Rank-average device memory usage: 2.2388%
+Max device memory usage: 2.6852%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 36...
+Iteration 37
+Updating conduction band edges: -3.424398921572867, -3.6282134805925708
+Free GiB: 93.051, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.475, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.2304140985269366e-07
+  Left contact current: [4.77779836e-27 9.61425121e-28 3.29693905e-28 ... 1.02183856e-27
+ 3.85135784e-28 1.94667705e-27]
+  Right contact current: [5.25981701e-27 1.42667537e-27 1.55335304e-27 ... 1.03133035e-27
+ 2.80990940e-29 2.05773338e-27]
+Rank-average device memory usage: 2.2353%
+Max device memory usage: 2.5184%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 37...
+Iteration 38
+Updating conduction band edges: -3.424398902563787, -3.628213457126059
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 2.176205585449273e-07
+  Left contact current: [ 4.43972276e-27 -9.44787078e-30 -2.25050302e-28 ...  4.11909932e-28
+  8.59537079e-28  2.35637181e-27]
+  Right contact current: [5.42821202e-27 1.76119243e-27 1.51722131e-27 ... 3.73494337e-28
+ 3.43043579e-28 1.84569388e-27]
+Rank-average device memory usage: 2.2308%
+Max device memory usage: 2.5563%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 38...
+Iteration 39
+Updating conduction band edges: -3.424398853225623, -3.628213489430847
+Free GiB: 92.887, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.602, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.5886336048303445e-07
+  Left contact current: [4.63033457e-27 3.69256214e-28 3.69273381e-28 ... 9.02943131e-28
+ 7.35245639e-28 2.24502713e-27]
+  Right contact current: [5.21548721e-27 1.96831280e-27 9.94694338e-28 ... 6.16701644e-28
+ 5.07925192e-28 1.85631378e-27]
+Rank-average device memory usage: 2.2007%
+Max device memory usage: 2.4449%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 39...
+Iteration 40
+Updating conduction band edges: -3.424398778729992, -3.628213499279374
+Free GiB: 92.799, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.602, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.1988139832132955e-07
+  Left contact current: [4.79810951e-27 6.85528534e-28 5.50472051e-28 ... 1.12116348e-27
+ 4.91638142e-28 2.65823389e-27]
+  Right contact current: [4.36330967e-27 1.03907290e-27 2.61425532e-28 ... 1.13154437e-27
+ 7.76292626e-28 2.48962397e-27]
+Rank-average device memory usage: 2.2498%
+Max device memory usage: 2.4875%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 40...
+Iteration 41
+Updating conduction band edges: -3.4243988651766424, -3.628213504354893
+Free GiB: 92.906, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.512, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 8.472637863608107e-08
+  Left contact current: [4.02274660e-27 7.86258688e-28 9.45890203e-28 ... 1.41749037e-27
+ 6.78633902e-28 2.80638369e-27]
+  Right contact current: [4.41760487e-27 9.19742541e-28 4.11922467e-28 ... 9.38710352e-28
+ 4.22451804e-28 2.35359604e-27]
+Rank-average device memory usage: 2.2594%
+Max device memory usage: 2.4936%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 41...
+Iteration 42
+Updating conduction band edges: -3.4243988927148394, -3.628213487631816
+Free GiB: 92.799, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.590, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.1525233074242275e-07
+  Left contact current: [4.55882816e-27 6.17909230e-28 1.26333187e-27 ... 1.75594480e-27
+ 1.30152782e-27 2.92567357e-27]
+  Right contact current: [ 4.81586745e-27  1.95904629e-27  5.97392501e-28 ...  5.95245668e-28
+ -1.12954019e-28  1.57075232e-27]
+Rank-average device memory usage: 2.2218%
+Max device memory usage: 2.4642%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 42...
+Iteration 43
+Updating conduction band edges: -3.4243988761001782, -3.6282134879727197
+Free GiB: 92.805, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.602, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.4005898963439373e-07
+  Left contact current: [4.68874776e-27 1.12949829e-27 1.15465716e-27 ... 1.37242268e-27
+ 9.52258204e-28 2.18520649e-27]
+  Right contact current: [4.46917675e-27 6.32414443e-28 3.40039153e-28 ... 9.15663208e-28
+ 2.90645643e-28 1.66201476e-27]
+Rank-average device memory usage: 2.2505%
+Max device memory usage: 2.4669%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 43...
+Iteration 44
+Updating conduction band edges: -3.4243988251345385, -3.628213492401948
+Free GiB: 92.799, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.475, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.0353839170751389e-07
+  Left contact current: [3.99793944e-27 8.65626493e-28 9.23003306e-28 ... 1.84218685e-27
+ 1.28026615e-27 2.56811949e-27]
+  Right contact current: [5.77978638e-27 1.39442686e-27 1.19960199e-27 ... 8.57563468e-28
+ 4.93268696e-28 2.03303159e-27]
+Rank-average device memory usage: 2.2437%
+Max device memory usage: 2.4936%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 44...
+Iteration 45
+Updating conduction band edges: -3.424398780853333, -3.628213497264708
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.664, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.4346207773824338e-07
+  Left contact current: [3.77065037e-27 7.21147636e-28 6.63534523e-28 ... 1.24388369e-27
+ 9.55192920e-28 2.40141566e-27]
+  Right contact current: [5.91022754e-27 1.94737034e-27 1.97046968e-27 ... 6.68908068e-28
+ 3.10038970e-28 1.49726356e-27]
+Rank-average device memory usage: 2.2336%
+Max device memory usage: 2.5288%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 45...
+Iteration 46
+Updating conduction band edges: -3.424398824861999, -3.6282134800270835
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.734, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.0576537222271457e-07
+  Left contact current: [3.72196333e-27 6.28188651e-28 6.44280276e-28 ... 9.30420906e-28
+ 5.64641568e-28 2.72964682e-27]
+  Right contact current: [6.11592927e-27 1.57812941e-27 1.65565213e-27 ... 6.62616456e-28
+ 2.60254171e-28 1.48476691e-27]
+Rank-average device memory usage: 2.2394%
+Max device memory usage: 2.5494%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 46...
+Iteration 47
+Updating conduction band edges: -3.42439890824132, -3.628213464234692
+Free GiB: 92.949, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.537, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.8957260448579372e-07
+  Left contact current: [3.35663783e-27 4.05246260e-28 2.18318639e-28 ... 4.61991721e-28
+ 8.49083584e-28 2.75048137e-27]
+  Right contact current: [5.57409623e-27 1.26090390e-27 1.25413472e-27 ... 8.86327961e-28
+ 5.96365892e-28 1.67924238e-27]
+Rank-average device memory usage: 2.2524%
+Max device memory usage: 2.4547%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 47...
+Iteration 48
+Updating conduction band edges: -3.424398933322296, -3.62821348391701
+Free GiB: 92.842, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.562, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.0876614100607113e-07
+  Left contact current: [ 3.41950124e-27 -1.58477578e-28  6.09707987e-28 ...  9.08712144e-28
+  5.31339976e-28  2.31308958e-27]
+  Right contact current: [4.91507789e-27 1.44236269e-27 1.08875077e-27 ... 8.14822268e-28
+ 6.60620748e-28 1.92548639e-27]
+Rank-average device memory usage: 2.2296%
+Max device memory usage: 2.4917%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 48...
+Iteration 49
+Updating conduction band edges: -3.424398901601888, -3.6282134942755797
+Free GiB: 92.760, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.570, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 3.0625744198205934e-07
+  Left contact current: [3.45157333e-27 3.39800993e-28 9.91568919e-28 ... 8.77660193e-28
+ 7.91006601e-28 2.45935829e-27]
+  Right contact current: [5.70192247e-27 1.26868523e-27 1.71993110e-27 ... 6.90117115e-28
+ 6.97058893e-28 1.34207431e-27]
+Rank-average device memory usage: 2.2252%
+Max device memory usage: 2.5125%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 49...
+Iteration 50
+Updating conduction band edges: -3.4243988852601066, -3.6282134874080505
+Free GiB: 92.785, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.557, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.932048529091097e-07
+  Left contact current: [3.69260008e-27 9.05210171e-28 1.34712099e-27 ... 6.54453776e-28
+ 8.91453595e-28 1.78900397e-27]
+  Right contact current: [6.00378253e-27 1.25627217e-27 1.89278759e-27 ... 1.03164708e-27
+ 4.64230466e-28 1.52650719e-27]
+Rank-average device memory usage: 2.2580%
+Max device memory usage: 2.5677%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 50...
+Iteration 51
+Updating conduction band edges: -3.424398875699239, -3.6282134850497716
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.689, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.62939453e-06]
+Contact Current Difference: 2.695997755033583e-07
+  Left contact current: [3.48853337e-27 5.99701537e-28 1.05387908e-27 ... 1.06749930e-27
+ 1.18835892e-27 1.45733271e-27]
+  Right contact current: [5.72778517e-27 1.36109326e-27 2.06617766e-27 ... 3.08771950e-28
+ 1.91838584e-29 1.43779945e-27]
+Rank-average device memory usage: 2.2423%
+Max device memory usage: 2.5572%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 51...
+Iteration 52
+Updating conduction band edges: -3.4243989043665404, -3.6282134870866627
+Free GiB: 92.887, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.602, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.6295255e-06]
+Contact Current Difference: 2.404693643593206e-07
+  Left contact current: [4.14239879e-27 1.19982197e-27 1.10689199e-27 ... 5.98066631e-28
+ 6.48581344e-28 1.52243020e-27]
+  Right contact current: [ 6.51162863e-27  2.67532710e-27  2.34246161e-27 ... -1.59668471e-28
+  1.76886161e-28  8.99572499e-28]
+Rank-average device memory usage: 2.2094%
+Max device memory usage: 2.4672%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 52...
+Iteration 53
+Updating conduction band edges: -3.4243988532987015, -3.6282134895247435
+Free GiB: 92.799, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.672, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.62939453e-06]
+Contact Current Difference: 2.0214608326477035e-07
+  Left contact current: [ 4.66644479e-27  1.51415113e-27  1.30620206e-27 ...  1.22974416e-28
+ -5.60594791e-28  1.09530097e-27]
+  Right contact current: [5.28124557e-27 1.20446623e-27 1.38386950e-27 ... 9.22449731e-28
+ 7.39928661e-28 1.84898558e-27]
+Rank-average device memory usage: 2.2386%
+Max device memory usage: 2.4464%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 53...
+Iteration 54
+Updating conduction band edges: -3.424398913071507, -3.62821346634615
+Free GiB: 92.887, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.500, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 2.3136695660209983e-07
+  Left contact current: [ 4.39014251e-27  1.60006065e-27  1.02050633e-27 ...  2.50252657e-28
+ -5.16059647e-28  1.66731770e-27]
+  Right contact current: [5.10715428e-27 5.82119247e-28 7.42877545e-28 ... 1.04784587e-27
+ 8.13508299e-28 1.87416962e-27]
+Rank-average device memory usage: 2.2434%
+Max device memory usage: 2.5390%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 54...
+Iteration 55
+Updating conduction band edges: -3.4243989136791684, -3.6282134631257126
+Free GiB: 92.805, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.709, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.644100731477277e-07
+  Left contact current: [ 4.66183188e-27  1.49124535e-27  1.04373217e-27 ...  2.47292337e-28
+ -1.54617946e-28  1.48990473e-27]
+  Right contact current: [5.08846002e-27 9.10630080e-28 1.90369821e-27 ... 3.63785971e-28
+ 2.36115065e-28 1.74233711e-27]
+Rank-average device memory usage: 2.2460%
+Max device memory usage: 2.5328%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 55...
+Iteration 56
+Updating conduction band edges: -3.4243988666964276, -3.628213486052797
+Free GiB: 92.906, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.512, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.8088425801296437e-07
+  Left contact current: [4.60717089e-27 1.18869548e-27 1.15471780e-27 ... 1.67379539e-28
+ 4.76821879e-28 1.23256798e-27]
+  Right contact current: [5.04864084e-27 6.98685926e-28 2.02404074e-27 ... 5.70840161e-28
+ 4.93313440e-28 2.04368906e-27]
+Rank-average device memory usage: 2.2347%
+Max device memory usage: 2.5121%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 56...
+Iteration 57
+Updating conduction band edges: -3.4243989093758764, -3.628213470136908
+Free GiB: 92.799, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.684, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.638061550733247e-07
+  Left contact current: [4.85068334e-27 1.11741567e-27 1.22531218e-27 ... 5.96689739e-28
+ 7.79844999e-28 1.41941378e-27]
+  Right contact current: [ 6.15458411e-27  1.65189622e-27  2.07205322e-27 ... -1.52529064e-30
+ -1.40927840e-29  1.66442039e-27]
+Rank-average device memory usage: 2.2240%
+Max device memory usage: 2.5536%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 57...
+Iteration 58
+Updating conduction band edges: -3.4243988394292266, -3.628213488283185
+Free GiB: 92.988, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.418, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.177176457477878e-07
+  Left contact current: [5.28614688e-27 6.08445058e-28 1.78923568e-27 ... 6.70713386e-28
+ 4.19130065e-28 1.71630365e-27]
+  Right contact current: [6.26803394e-27 1.80002928e-27 1.69646127e-27 ... 3.08022988e-28
+ 9.51218619e-29 1.31923263e-27]
+Rank-average device memory usage: 2.2252%
+Max device memory usage: 2.4178%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 58...
+Iteration 59
+Updating conduction band edges: -3.424398928274947, -3.628213482976451
+Free GiB: 92.723, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.418, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 2.2804297979735905e-07
+  Left contact current: [4.80549911e-27 1.03895134e-28 1.00829477e-27 ... 4.56692046e-28
+ 1.08142318e-27 2.58556672e-27]
+  Right contact current: [6.42496414e-27 2.04897176e-27 1.97894144e-27 ... 3.30426757e-28
+ 3.27514537e-28 1.16601920e-27]
+Rank-average device memory usage: 2.2429%
+Max device memory usage: 2.5533%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 59...
+Iteration 60
+Updating conduction band edges: -3.424398917663656, -3.6282134750675605
+Free GiB: 92.723, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.791, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.62939453e-06]
+Contact Current Difference: 1.270927007879577e-07
+  Left contact current: [ 4.56774137e-27  4.35801983e-28  8.93433363e-28 ... -7.33058472e-29
+  7.14369344e-28  2.13578859e-27]
+  Right contact current: [6.40865170e-27 2.07761031e-27 2.55738648e-27 ... 2.99728994e-28
+ 2.50614818e-28 1.39344935e-27]
+Rank-average device memory usage: 2.2447%
+Max device memory usage: 2.4911%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 60...
+Iteration 61
+Updating conduction band edges: -3.424398890665809, -3.6282134644902206
+Free GiB: 92.988, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.738, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.64428117e-06]
+Contact Current Difference: 9.072456040853244e-08
+  Left contact current: [ 4.89640845e-27  1.04270856e-27  1.27091337e-27 ... -3.72240721e-29
+ -3.65772746e-30  1.51872974e-27]
+  Right contact current: [5.61153322e-27 1.22761055e-27 1.72213889e-27 ... 1.70519646e-28
+ 4.62052385e-28 1.57690301e-27]
+Rank-average device memory usage: 2.2623%
+Max device memory usage: 2.6108%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 61...
+Iteration 62
+Updating conduction band edges: -3.4243988257947557, -3.628213496047181
+Free GiB: 92.846, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.729, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.3575959616554667e-07
+  Left contact current: [ 5.35883316e-27  1.03729371e-27  1.13918179e-27 ...  3.68540698e-28
+ -1.52071166e-28  1.85577994e-27]
+  Right contact current: [5.13071846e-27 9.09316378e-28 1.35470315e-27 ... 6.07175434e-28
+ 4.98284166e-28 1.62493117e-27]
+Rank-average device memory usage: 2.2415%
+Max device memory usage: 2.6107%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 62...
+Iteration 63
+Updating conduction band edges: -3.424398909190092, -3.628213500282383
+Free GiB: 92.926, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.359, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.3009262696522111e-07
+  Left contact current: [5.04045618e-27 5.29524505e-28 6.70325939e-28 ... 8.74461628e-28
+ 2.78715211e-28 2.00462883e-27]
+  Right contact current: [5.05062038e-27 1.01814193e-27 8.80305567e-28 ... 7.14032470e-28
+ 4.58324112e-28 1.55612508e-27]
+Rank-average device memory usage: 2.2228%
+Max device memory usage: 2.4997%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 63...
+Iteration 64
+Updating conduction band edges: -3.4243988959241145, -3.6282134981742615
+Free GiB: 92.754, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.545, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.8582945786327354e-07
+  Left contact current: [5.01731916e-27 9.97561820e-28 1.23299135e-27 ... 4.95118732e-28
+ 1.46585274e-28 2.02979274e-27]
+  Right contact current: [5.68376772e-27 9.18438526e-28 8.77621352e-28 ... 6.77908037e-28
+ 2.82071956e-28 1.33693067e-27]
+Rank-average device memory usage: 2.2413%
+Max device memory usage: 2.5515%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 64...
+Iteration 65
+Updating conduction band edges: -3.424398912050598, -3.6282134751844235
+Free GiB: 92.760, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.664, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.5325244726374643e-07
+  Left contact current: [5.12992754e-27 7.71666864e-28 1.13790943e-27 ... 8.55767198e-28
+ 7.68371420e-29 2.13459869e-27]
+  Right contact current: [ 6.63898942e-27  1.79075440e-27  1.83246376e-27 ...  2.96818005e-28
+ -1.90309886e-28  1.15944473e-27]
+Rank-average device memory usage: 2.1964%
+Max device memory usage: 2.4507%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 65...
+Iteration 66
+Updating conduction band edges: -3.424398956309863, -3.628213491380084
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.664, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.3968143375373693e-07
+  Left contact current: [5.00012678e-27 7.54809184e-28 1.21557651e-27 ... 8.70077467e-28
+ 2.07526769e-28 1.88395693e-27]
+  Right contact current: [ 5.50219253e-27  1.40566001e-27  1.33735597e-27 ...  4.50654339e-28
+ -1.61695206e-28  1.05022204e-27]
+Rank-average device memory usage: 2.2357%
+Max device memory usage: 2.4877%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 66...
+Iteration 67
+Updating conduction band edges: -3.424398927853488, -3.628213490398101
+Free GiB: 92.862, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.594, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.4679509687410414e-07
+  Left contact current: [4.82323406e-27 5.44785910e-28 6.67682695e-28 ... 8.41693338e-28
+ 7.90529431e-28 2.06408754e-27]
+  Right contact current: [5.14022462e-27 1.67563615e-27 1.65194653e-27 ... 5.53815403e-28
+ 6.36811445e-29 1.40021154e-27]
+Rank-average device memory usage: 2.2246%
+Max device memory usage: 2.5769%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 67...
+Iteration 68
+Updating conduction band edges: -3.4243989462070963, -3.628213472990698
+Free GiB: 92.881, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.475, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.7155536960581095e-08
+  Left contact current: [4.08464496e-27 9.18446154e-29 5.77660637e-28 ... 1.01497178e-27
+ 9.12572733e-28 1.87956121e-27]
+  Right contact current: [4.69407408e-27 1.62320237e-27 1.42294996e-27 ... 6.14300624e-28
+ 2.80074879e-28 1.92926880e-27]
+Rank-average device memory usage: 2.2486%
+Max device memory usage: 2.4700%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 68...
+Iteration 69
+Updating conduction band edges: -3.424398919666215, -3.628213471253721
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.463, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 6.654608603225143e-08
+  Left contact current: [ 3.89366947e-27 -1.27973686e-29  8.44597031e-28 ...  7.83264465e-28
+  1.42411233e-27  2.12724461e-27]
+  Right contact current: [5.31000420e-27 1.43876469e-27 6.09519540e-28 ... 5.63163229e-28
+ 7.95489794e-29 1.54811256e-27]
+Rank-average device memory usage: 2.2124%
+Max device memory usage: 2.4259%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 69...
+Iteration 70
+Updating conduction band edges: -3.424398842404531, -3.6282134765596616
+Free GiB: 92.785, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.664, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.7308745325645553e-07
+  Left contact current: [ 4.33859539e-27 -2.78536519e-29  1.52120247e-28 ...  5.37317481e-28
+  1.48850052e-27  2.51267965e-27]
+  Right contact current: [6.00155367e-27 1.77913527e-27 6.61722901e-28 ... 3.66913122e-28
+ 2.61489811e-28 1.66018587e-27]
+Rank-average device memory usage: 2.2127%
+Max device memory usage: 2.4670%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 70...
+Iteration 71
+Updating conduction band edges: -3.424398903666959, -3.6282134866782383
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.692, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 3.534981559121658e-08
+  Left contact current: [4.40303651e-27 3.05363759e-28 2.89610087e-28 ... 7.62052730e-28
+ 8.21838724e-28 1.99400000e-27]
+  Right contact current: [ 6.32038354e-27  2.24943620e-27  1.53749691e-27 ...  3.90918526e-28
+ -4.43907339e-29  1.71150894e-27]
+Rank-average device memory usage: 2.2362%
+Max device memory usage: 2.5040%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 71...
+Iteration 72
+Updating conduction band edges: -3.424398930144241, -3.628213483606887
+Free GiB: 92.996, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.434, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 1.0686968186790491e-07
+  Left contact current: [4.68397607e-27 6.64508130e-28 8.47924789e-28 ... 8.50187872e-28
+ 8.29633101e-28 2.60700036e-27]
+  Right contact current: [5.82726773e-27 1.84593383e-27 7.91874714e-28 ... 7.73200823e-28
+ 3.01842764e-28 1.64403133e-27]
+Rank-average device memory usage: 2.2454%
+Max device memory usage: 2.4936%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 72...
+Iteration 73
+Updating conduction band edges: -3.424398937826443, -3.628213478782351
+Free GiB: 92.738, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.664, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 7.061865475201101e-08
+  Left contact current: [4.91623553e-27 7.50123741e-28 5.25656557e-28 ... 3.33355648e-28
+ 1.24313538e-27 2.20783844e-27]
+  Right contact current: [ 5.95772026e-27  1.94514897e-27  6.86921083e-29 ...  7.18714295e-28
+ -2.35131959e-28  1.36591538e-27]
+Rank-average device memory usage: 2.2451%
+Max device memory usage: 2.5984%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 73...
+Iteration 74
+Updating conduction band edges: -3.424398852362343, -3.6282134625317455
+Free GiB: 92.862, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.862, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.005288739813412e-07
+  Left contact current: [ 5.04261130e-27  1.46964692e-27  1.07235687e-27 ... -2.14530621e-28
+  6.37539143e-28  1.86711664e-27]
+  Right contact current: [ 5.15359934e-27  1.07714855e-27 -9.36181908e-29 ...  8.80245901e-28
+ -2.67320987e-28  1.63614348e-27]
+Rank-average device memory usage: 2.2328%
+Max device memory usage: 2.4936%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 74...
+Iteration 75
+Updating conduction band edges: -3.424398774523724, -3.6282134745711057
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.582, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 4.814150886094104e-08
+  Left contact current: [5.11677409e-27 1.47892684e-27 1.25113945e-27 ... 4.83763002e-29
+ 2.23075403e-28 1.75998779e-27]
+  Right contact current: [5.03880749e-27 1.12837935e-27 4.67631686e-28 ... 1.12152228e-27
+ 1.58880283e-28 1.94742808e-27]
+Rank-average device memory usage: 2.2388%
+Max device memory usage: 2.4671%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 75...
+Iteration 76
+Updating conduction band edges: -3.4243987767049746, -3.6282134909753263
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.582, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.5185904757037544e-07
+  Left contact current: [4.41746687e-27 7.13867746e-28 8.43865085e-28 ... 1.77857708e-28
+ 3.50351372e-28 2.16023079e-27]
+  Right contact current: [4.72904412e-27 1.39024929e-27 1.03551021e-27 ... 1.22377852e-27
+ 3.09231346e-28 1.96147085e-27]
+Rank-average device memory usage: 2.2502%
+Max device memory usage: 2.6313%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 76...
+Iteration 77
+Updating conduction band edges: -3.4243988701500165, -3.6282134959895576
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.582, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.63311891e-06]
+Contact Current Difference: 1.309229861433392e-07
+  Left contact current: [4.19970122e-27 5.21692304e-28 1.44270062e-27 ... 7.26373082e-28
+ 2.97582499e-28 2.19385058e-27]
+  Right contact current: [4.70553598e-27 1.52008779e-27 7.15147588e-28 ... 1.21360357e-27
+ 7.24210212e-28 1.91279138e-27]
+Rank-average device memory usage: 2.2118%
+Max device memory usage: 2.4465%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 77...
+Iteration 78
+Updating conduction band edges: -3.424398757244358, -3.628213512933297
+Free GiB: 92.887, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.750, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.0534293763946739e-07
+  Left contact current: [4.42576727e-27 7.22685648e-28 1.47387506e-27 ... 1.09060739e-27
+ 2.85399611e-28 1.86266772e-27]
+  Right contact current: [4.50638121e-27 7.40619915e-28 7.43879300e-28 ... 8.05748726e-28
+ 5.84382601e-28 1.83098228e-27]
+Rank-average device memory usage: 2.2424%
+Max device memory usage: 2.5831%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 78...
+Iteration 79
+Updating conduction band edges: -3.424398677350836, -3.6282135009828127
+Free GiB: 92.947, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.653, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.3050651443292233e-07
+  Left contact current: [ 4.58176309e-27 -1.69053941e-28  1.41454912e-27 ...  1.57452535e-27
+  8.93576389e-28  2.21970278e-27]
+  Right contact current: [3.84156507e-27 9.54189182e-28 2.00081002e-28 ... 7.51925457e-28
+ 5.51841368e-28 1.74221128e-27]
+Rank-average device memory usage: 2.2118%
+Max device memory usage: 2.4542%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 79...
+Iteration 80
+Updating conduction band edges: -3.4243987569781846, -3.6282134976975415
+Free GiB: 92.867, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.537, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.4520514069523566e-07
+  Left contact current: [4.99735132e-27 6.37491473e-28 1.84959522e-27 ... 8.91878946e-28
+ 3.93879966e-28 2.15014694e-27]
+  Right contact current: [4.12780676e-27 2.09636553e-27 3.73876236e-28 ... 3.27072612e-28
+ 4.48122097e-28 1.51641299e-27]
+Rank-average device memory usage: 2.2106%
+Max device memory usage: 2.4438%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 80...
+Iteration 81
+Updating conduction band edges: -3.424398662456002, -3.628213509936567
+Free GiB: 92.842, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.563, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 1.7725552262960742e-07
+  Left contact current: [4.40462166e-27 7.41242696e-28 1.42420535e-27 ... 1.05972898e-27
+ 7.25229894e-28 2.51434054e-27]
+  Right contact current: [4.76384697e-27 2.06626210e-27 7.67837375e-28 ... 4.34631949e-28
+ 3.01262147e-28 1.38623900e-27]
+Rank-average device memory usage: 2.1831%
+Max device memory usage: 2.4444%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 81...
+Iteration 82
+Updating conduction band edges: -3.424398739375467, -3.6282135220412233
+Free GiB: 92.867, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.373, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 8.388366958857196e-08
+  Left contact current: [4.43599685e-27 5.81993034e-28 1.13998578e-27 ... 1.01545001e-27
+ 6.70505722e-28 1.75136421e-27]
+  Right contact current: [5.37840159e-27 1.92023814e-27 1.07866137e-27 ... 3.14541586e-28
+ 2.07545739e-28 1.43346071e-27]
+Rank-average device memory usage: 2.2334%
+Max device memory usage: 2.5201%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 82...
+Iteration 83
+Updating conduction band edges: -3.42439867235903, -3.6282135288224726
+Free GiB: 92.678, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.475, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 8.693931350008122e-09
+  Left contact current: [3.61593037e-27 1.94430746e-28 5.80611503e-29 ... 9.54727718e-28
+ 8.95471674e-28 1.78058224e-27]
+  Right contact current: [5.56974363e-27 2.03682387e-27 6.39286337e-28 ... 4.68266435e-28
+ 3.64342040e-28 1.77335734e-27]
+Rank-average device memory usage: 2.2430%
+Max device memory usage: 2.6637%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 83...
+Iteration 84
+Updating conduction band edges: -3.424398748412571, -3.628213531295238
+Free GiB: 92.672, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.475, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.63311891e-06]
+Contact Current Difference: 9.052217371519067e-08
+  Left contact current: [3.95529265e-27 2.20618624e-28 3.70153237e-28 ... 1.23390658e-27
+ 9.97646023e-28 2.66924184e-27]
+  Right contact current: [5.33375540e-27 1.08656972e-27 4.04730679e-28 ... 6.53902797e-28
+ 4.65720898e-28 2.18700792e-27]
+Rank-average device memory usage: 2.2451%
+Max device memory usage: 2.5385%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 84...
+Iteration 85
+Updating conduction band edges: -3.4243988555675657, -3.6282134615518107
+Free GiB: 92.779, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.570, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 2.5928185801507575e-08
+  Left contact current: [3.84792378e-27 8.10818447e-28 5.42737190e-28 ... 8.83597001e-28
+ 1.49867799e-27 2.62086480e-27]
+  Right contact current: [6.05209507e-27 9.10643444e-28 5.82259998e-28 ... 7.83022720e-28
+ 6.46694053e-28 2.01446242e-27]
+Rank-average device memory usage: 2.2305%
+Max device memory usage: 2.4762%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 85...
+Iteration 86
+Updating conduction band edges: -3.4243988444764417, -3.6282134271844937
+Free GiB: 92.785, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.582, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 2.8494870636663894e-08
+  Left contact current: [3.74934134e-27 4.78293965e-28 8.12975478e-28 ... 7.77951724e-28
+ 9.13067815e-28 2.54869534e-27]
+  Right contact current: [6.05608279e-27 1.27104009e-27 1.17824542e-27 ... 5.15344541e-28
+ 3.28718261e-28 1.97704139e-27]
+Rank-average device memory usage: 2.1870%
+Max device memory usage: 2.4967%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 86...
+Iteration 87
+Updating conduction band edges: -3.424398854993087, -3.628213417092298
+Free GiB: 92.887, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.418, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [5.39479661e-06]
+Contact Current Difference: 1.0096867212282257e-07
+  Left contact current: [3.97972010e-27 5.23605617e-28 1.02208794e-27 ... 1.10694967e-27
+ 8.14058933e-28 2.16352699e-27]
+  Right contact current: [5.25898769e-27 1.25330753e-27 1.40463852e-27 ... 5.99594603e-28
+ 5.97321233e-28 2.05626822e-27]
+Rank-average device memory usage: 2.1977%
+Max device memory usage: 2.5801%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 87...
+Iteration 88
+Updating conduction band edges: -3.4243988727080197, -3.6282133917936514
+Free GiB: 92.723, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.709, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 9.857093383885962e-08
+  Left contact current: [4.55911239e-27 1.42579120e-27 1.35070332e-27 ... 6.45503444e-28
+ 1.84454530e-28 2.13627655e-27]
+  Right contact current: [5.76877593e-27 1.31866457e-27 1.41951269e-27 ... 9.34295362e-28
+ 9.46435924e-28 2.14721086e-27]
+Rank-average device memory usage: 2.2079%
+Max device memory usage: 2.4670%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 88...
+Iteration 89
+Updating conduction band edges: -3.424398869617586, -3.628213396913432
+Free GiB: 92.906, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.467, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 9.145517171522954e-08
+  Left contact current: [4.33101326e-27 1.53195795e-27 1.77528981e-27 ... 5.57909885e-28
+ 6.25780479e-28 2.11378313e-27]
+  Right contact current: [5.21357408e-27 9.76122950e-28 1.32584092e-27 ... 7.20864304e-28
+ 1.01693129e-27 2.15831760e-27]
+Rank-average device memory usage: 2.2041%
+Max device memory usage: 2.3807%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 89...
+Iteration 90
+Updating conduction band edges: -3.4243988611996423, -3.6282133549898634
+Free GiB: 92.862, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.442, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.0932342545209167e-07
+  Left contact current: [5.01936603e-27 1.89895057e-27 1.78187005e-27 ... 6.18983709e-28
+ 7.81381626e-28 2.22029174e-27]
+  Right contact current: [5.49229409e-27 2.24656216e-27 2.22044621e-27 ... 6.34291400e-28
+ 7.31755676e-28 1.93534099e-27]
+Rank-average device memory usage: 2.2126%
+Max device memory usage: 2.5535%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 90...
+Iteration 91
+Updating conduction band edges: -3.424398872724382, -3.62821335000009
+Free GiB: 92.944, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.360, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.6463279062760294e-07
+  Left contact current: [4.34721030e-27 1.67138403e-27 1.54936038e-27 ... 5.77330054e-28
+ 3.64655877e-28 2.25265578e-27]
+  Right contact current: [4.93696253e-27 1.64167199e-27 2.15738070e-27 ... 5.45071612e-28
+ 7.06899097e-28 2.31492169e-27]
+Rank-average device memory usage: 2.2258%
+Max device memory usage: 2.4608%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 91...
+Iteration 92
+Updating conduction band edges: -3.4243988586985186, -3.6282133601503364
+Free GiB: 92.754, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.360, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 8.065699854970659e-08
+  Left contact current: [4.42461386e-27 8.08403562e-28 1.62468400e-27 ... 1.10518408e-28
+ 2.13548621e-28 1.67529674e-27]
+  Right contact current: [5.02730826e-27 1.83379480e-27 1.89375413e-27 ... 8.08031602e-28
+ 4.01659559e-28 1.85995914e-27]
+Rank-average device memory usage: 2.2414%
+Max device memory usage: 2.4668%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 92...
+Iteration 93
+Updating conduction band edges: -3.424398865464016, -3.6282133524368643
+Free GiB: 92.754, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.627, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.64428117e-06]
+Contact Current Difference: 1.0020564688954792e-07
+  Left contact current: [4.33842954e-27 6.49030307e-28 1.12977356e-27 ... 3.78833379e-28
+ 1.90022471e-28 1.74666861e-27]
+  Right contact current: [ 6.09980366e-27  2.15731258e-27  2.51887508e-27 ...  1.25523841e-28
+ -2.09778826e-28  1.27469346e-27]
+Rank-average device memory usage: 2.2503%
+Max device memory usage: 2.5143%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 93...
+Iteration 94
+Updating conduction band edges: -3.424398868389314, -3.6282133613461554
+Free GiB: 92.842, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.481, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.64428117e-06]
+Contact Current Difference: 1.3509901585721101e-07
+  Left contact current: [4.45599430e-27 6.89088540e-28 1.24124921e-27 ... 3.55975943e-29
+ 2.27803563e-28 1.31065920e-27]
+  Right contact current: [ 5.29699078e-27  2.21966126e-27  2.46179238e-27 ...  2.21811050e-29
+ -2.47140413e-29  1.63569783e-27]
+Rank-average device memory usage: 2.2208%
+Max device memory usage: 2.5387%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 94...
+Iteration 95
+Updating conduction band edges: -3.4243988281317757, -3.6282133327298687
+Free GiB: 92.786, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.571, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 8.182297077906353e-08
+  Left contact current: [3.94413191e-27 5.92519268e-28 1.05736414e-27 ... 3.28547389e-28
+ 1.47203104e-28 1.70012274e-27]
+  Right contact current: [5.51463817e-27 1.80000842e-27 2.02120180e-27 ... 3.23599837e-28
+ 1.18770544e-28 1.45286948e-27]
+Rank-average device memory usage: 2.2470%
+Max device memory usage: 2.5677%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 95...
+Iteration 96
+Updating conduction band edges: -3.4243988850680087, -3.6282133734554165
+Free GiB: 92.786, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.665, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.86419988e-06]
+Contact Current Difference: 3.1691735054815984e-08
+  Left contact current: [3.99798297e-27 3.08473475e-28 4.72476304e-28 ... 4.64761412e-28
+ 1.79080375e-28 1.24586281e-27]
+  Right contact current: [5.42652140e-27 1.51962825e-27 1.71282531e-27 ... 5.61125388e-28
+ 7.12720358e-29 1.78061010e-27]
+Rank-average device memory usage: 2.2282%
+Max device memory usage: 2.5677%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 96...
+Iteration 97
+Updating conduction band edges: -3.424398857321511, -3.6282133753885177
+Free GiB: 92.969, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.528, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [8.5299224e-06]
+Contact Current Difference: 3.410475294535198e-09
+  Left contact current: [4.08733954e-27 4.78683316e-28 8.34992005e-28 ... 1.29866244e-27
+ 6.99356776e-28 1.85879127e-27]
+  Right contact current: [5.43133034e-27 1.83056973e-27 2.00241160e-27 ... 5.76099091e-28
+ 2.45640422e-28 1.56625450e-27]
+Rank-average device memory usage: 2.2341%
+Max device memory usage: 2.4711%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 97...
+Iteration 98
+Updating conduction band edges: -3.424398806966682, -3.6282133792636144
+Free GiB: 92.725, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.471, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.62939453e-06]
+Contact Current Difference: 1.509087273459525e-08
+  Left contact current: [3.70546151e-27 7.46737239e-28 2.46077750e-28 ... 1.32581454e-27
+ 1.15761214e-27 2.36222575e-27]
+  Right contact current: [4.97839870e-27 2.07018534e-27 1.37750908e-27 ... 5.73952775e-28
+ 2.76950024e-28 1.84497705e-27]
+Rank-average device memory usage: 2.2336%
+Max device memory usage: 2.4875%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 98...
+Iteration 99
+Updating conduction band edges: -3.424398817005393, -3.628213362471632
+Free GiB: 92.686, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Free GiB: 92.735, Batches: 1, Batch size: 1096
+------------------- cuFFT plan cache (device 0) -------------------
+cache enabled? True
+current / max size   : 0 / 16 (counts)
+current / max memsize: 0 / (unlimited) (bytes)
+hits / misses: 0 / 0 (counts)
+
+cached plans (most recently used first):
+
+None
+Checking convergence...
+Maximum Self-Energy Update: [7.68876815e-06]
+Contact Current Difference: 1.0977748868441772e-07
+  Left contact current: [4.08523183e-27 6.72233226e-28 1.26241380e-28 ... 1.46132258e-27
+ 1.02965739e-27 2.35478484e-27]
+  Right contact current: [4.70445875e-27 9.51323311e-28 1.54415233e-27 ... 8.66961257e-28
+ 1.80283268e-29 1.86595033e-27]
+Rank-average device memory usage: 2.2174%
+Max device memory usage: 2.5371%
+CuPy memory - Average used: 0.83 GB, Max used: 0.83 GB
+Writing output for iteration 99...
+SCBA did not converge after 99 iterations.
+Leaving SCBA after: 1338.62 s
