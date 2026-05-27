@@ -32,5 +32,5 @@ source ~/load_env.sh
 source ~/load_env.sh 
 
 srun quatrex run /capstor/scratch/cscs/luckeller/quatrex/examples/w90/carbon-nanotube/gw/quatrex_config.toml
-
+# srun quatrex run /capstor/scratch/cscs/luckeller/quatrex/examples/w90/mos2/gw-kpoints/quatrex_config.toml
 

@@ -114,5 +114,5 @@ model = "pseudo-scattering"
 phonon_energy = 50e-3
 deformation_potential = 5e-3
 
-# [compute]                 # changed
-# num_bits = 24             # changed
+[compute]                 # changed
+num_bits = 28             # changed

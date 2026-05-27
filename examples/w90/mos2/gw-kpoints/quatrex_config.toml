@@ -13,7 +13,7 @@ neighbor_cell_cutoff = [2, 2, 0]
 num_transport_cells = 4
 
 [scba] # =============================================================
-max_iterations = 2
+max_iterations = 100
 mixing_factor = 0.5
 
 coulomb_screening = true
@@ -21,15 +21,15 @@ phonon = true
 
 
 [outputs]  # Select which outputs to write.
-electron_ldos = true
+electron_ldos = false # changed
 contact_currents = true
-device_currents = true
-electron_density = true
-hole_density = true
-self_energy_density = true
+device_currents = false # changed
+electron_density = false # changed
+hole_density = false # changed
+self_energy_density = false # changed
 
-polarization_density = true
-coulomb_screening_density = true
+polarization_density = false # changed
+coulomb_screening_density = false # changed
 
 
 [electron] # =========================================================
@@ -45,9 +45,9 @@ band_edge_tracking = "eigenvalues"
 
 flatband = false
 
-energy_window_min = -10.0 # eV
-energy_window_max = 5 # eV
-energy_window_num = 100
+energy_window_min = -25.0 # eV
+energy_window_max = 15.0 # eV
+energy_window_num = 8000
 
 eta = 1e-5
 
@@ -118,3 +118,6 @@ lyapunov.memoizer.absolute_tol = 1e-6
 model = "pseudo-scattering"
 phonon_energy = 40e-3         # eV
 deformation_potential = 75e-3 # eV
+
+# [compute]                 # changed
+# num_bits = 24             # changed

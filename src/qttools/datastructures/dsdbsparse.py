@@ -796,7 +796,21 @@ class DSDBSparse(ABC):
             if val.ndim == 0:
                 _data[..., self._diag_inds] = val
             else:
-                # _data[..., self._diag_inds] = val[..., self._diag_value_inds]
+                # Ensure `val` can broadcast to the target shape. The last
+                # axis of `val` corresponds to the diagonal value axis
+                # (orbitals). If the datastructure has additional stack
+                # dimensions (e.g., k-points) between the leading dims and
+                # the orbital axis, we need to insert singleton axes so the
+                # assignment broadcasts correctly.
+                data_prefix_ndim = _data.ndim - 1
+                val_prefix_ndim = val.ndim - 1
+                if val_prefix_ndim < data_prefix_ndim:
+                    # Insert singleton axes between the leading dims and
+                    # the last axis of `val`.
+                    new_shape = val.shape[:-1] + (1,) * (
+                        data_prefix_ndim - val_prefix_ndim
+                    ) + (val.shape[-1],)
+                    val = val.reshape(new_shape)
                 _data[..., self._diag_inds] = val
             return
 
@@ -890,7 +904,7 @@ class DSDBSparse(ABC):
             if not discard:
                 # Shuffle data to make it contiguous in memory
                 _data = xp.zeros_like(self._data)
-                chunk_size = _data.shape[1] // 10
+                chunk_size = max(1, _data.shape[1] // 10)
                 for i in range(0, _data.shape[1], chunk_size):
                     _data[: self.global_stack_shape[0], i : i + chunk_size] = (
                         self._data[self._stack_padding_mask, i : i + chunk_size]
@@ -901,7 +915,7 @@ class DSDBSparse(ABC):
             if not discard:
                 # Undo the shuffle
                 _data = xp.zeros_like(self._data)
-                chunk_size = _data.shape[1] // 10
+                chunk_size = max(1, _data.shape[1] // 10)
                 for i in range(0, _data.shape[1], chunk_size):
                     _data[self._stack_padding_mask, i : i + chunk_size] = self._data[
                         : self.global_stack_shape[0], i : i + chunk_size
@@ -1381,6 +1395,8 @@ class _DStackView:
                 stop = s.stop if s.stop is not None else shape[i]
                 stack_size.append(stop - start)
             elif isinstance(s, int):
+                stack_size.append(1)
+            elif isinstance(s, np.int64):
                 stack_size.append(1)
             else:
                 raise IndexError(
