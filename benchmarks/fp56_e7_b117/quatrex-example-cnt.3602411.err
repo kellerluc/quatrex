@@ -1,0 +1,509 @@
+error: a uenv session is already running.
+It is not possible to call 'uenv start' or 'uenv run' inside a uenv session.
+You need to finish the current session by typing 'exit' or hitting '<ctrl-d>'.
+error: a uenv session is already running.
+It is not possible to call 'uenv start' or 'uenv run' inside a uenv session.
+You need to finish the current session by typing 'exit' or hitting '<ctrl-d>'.
+/capstor/scratch/cscs/luckeller/quatrex_env_new/lib/python3.13/site-packages/cupyx/jit/_interface.py:247: FutureWarning: cupyx.jit.rawkernel is experimental. The interface can change in the future.
+  cupy._util.experimental('cupyx.jit.rawkernel')
+/capstor/scratch/cscs/luckeller/quatrex/src/quatrex/core/config.py:1028: UserWarning: The CPU code will run sequentially which may impact performance.
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/quatrex/core/config.py:1028: UserWarning: The CPU code will run sequentially which may impact performance.
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex_env_new/lib/python3.13/site-packages/cupyx/jit/_interface.py:247: FutureWarning: cupyx.jit.rawkernel is experimental. The interface can change in the future.
+  cupy._util.experimental('cupyx.jit.rawkernel')
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 4.871e-01
+  Absolute recursion error: 7.455e+03
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 2.756e-01
+  Absolute recursion error: 4.325e+00
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.038e-01
+  Absolute recursion error: 6.173e+00
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 2.894e-01
+  Absolute recursion error: 3.134e+03
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.664e-01
+  Absolute recursion error: 8.277e+01
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.717e-01
+  Absolute recursion error: 2.020e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.681e-01
+  Absolute recursion error: 3.247e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for right-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.581e-01
+  Absolute recursion error: 2.580e+03
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.656e-01
+  Absolute recursion error: 3.961e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.639e-01
+  Absolute recursion error: 4.284e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.629e-01
+  Absolute recursion error: 4.410e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.623e-01
+  Absolute recursion error: 4.449e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.614e-01
+  Absolute recursion error: 4.455e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.614e-01
+  Absolute recursion error: 4.450e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.443e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.438e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.433e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.431e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.429e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.428e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.427e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.606e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.613e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.613e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.606e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.615e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.614e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.616e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.606e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.614e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.613e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.609e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.607e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.610e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.612e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.611e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
+/capstor/scratch/cscs/luckeller/quatrex/src/qttools/boundary_conditions/boundary_system.py:352: RuntimeWarning: High error at rank 20 for left-slice(0, 437, None) of OBCSolver Spectral:
+  Relative recursion error: 1.608e-01
+  Absolute recursion error: 4.426e+02
+
+  warnings.warn(
