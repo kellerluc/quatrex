@@ -8,7 +8,7 @@ transport_direction = 'x'
 block_size = 32
 
 [scba] # ===============================================================
-max_iterations = 100
+max_iterations = 2
 mixing_factor = 0.5
 
 coulomb_screening = true
@@ -115,4 +115,6 @@ phonon_energy = 50e-3
 deformation_potential = 5e-3
 
 [compute]                 # changed
-num_bits = 28             # changed
+num_bits = 32             # changed
+num_exponent_bits = 6     # changed
+exponent_bias = 53       # changed

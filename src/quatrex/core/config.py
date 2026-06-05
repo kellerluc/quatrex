@@ -985,6 +985,12 @@ class ComputeConfig(BaseModel):
     If None, no compression is applied and the data is stored in complex128.
     """
 
+    num_exponent_bits: PositiveInt = 7
+    """The number of exponent bits used by the mixed-precision format."""
+
+    exponent_bias: PositiveInt = 117
+    """The exponent bias used by the mixed-precision format."""
+
     w_assembly_ozaki: None | int = None
     g_rgf_ozaki: None | int = None
     w_rgf_ozaki: None | int = None
@@ -1030,14 +1036,36 @@ class ComputeConfig(BaseModel):
     def set_num_mantissa_bytes(self) -> Self:
 
         if self.num_bits is not None:
-            if self.num_bits % 1 != 0:
+            if self.num_bits % 4 != 0:
                 raise ValueError(
-                    "The total number of bits (exponent + mantissa) should be a multiple of 8 for alignment."
+                    "The total number of bits (real + imaginary) should be a multiple of 8 for alignment."
                     f"Got {self.num_bits} bits."
                 )
 
             if xp.__name__ == "numpy":
                 raise ValueError("NumPy does not support the compression.")
+
+        return self
+
+    @model_validator(mode="after")
+    def configure_mixed_precision(self) -> Self:
+        """Applies the mixed-precision exponent settings when compression is used."""
+
+        if self.num_bits is not None:
+            if self.num_exponent_bits >= self.num_bits - 1:
+                raise ValueError(
+                    "num_exponent_bits must leave at least one mantissa bit and one sign bit."
+                )
+        
+        if xp.__name__ == "cupy":
+            from qttools.kernels.mixed_precision.cupy.compression import (
+                configure as configure_mixed_precision,
+            )
+
+            configure_mixed_precision(
+                num_exponent_bits=self.num_exponent_bits,
+                exponent_bias=self.exponent_bias,
+            )
 
         return self
 

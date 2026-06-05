@@ -7,34 +7,28 @@ from qttools import NDArray
 
 BLOCK_SIZE = 256
 
-# Configure the custom floating-point format here.
-
-# For standard precision, use 8 exponent bits and bias 128.
-# NUM_EXPONENT_BITS = 8
-# EXPONENT_BIAS = 128
-
-# For 8 bit exponent bits and bias 245.
-# NUM_EXPONENT_BITS = 8
-# EXPONENT_BIAS = 245
-
-# For 7 bit exponent bits and bias 117.
-# NUM_EXPONENT_BITS = 7
-# EXPONENT_BIAS = 117
-
-# For 6 bit exponent bits and bias 53.
-NUM_EXPONENT_BITS = 6
-EXPONENT_BIAS = 53
-
-# For 5 bit exponent bits and bias 21.
-# NUM_EXPONENT_BITS = 5
-# EXPONENT_BIAS = 21
+# Global state for mixed precision configuration, initialized with defaults
+_CONFIG = {
+    "NUM_EXPONENT_BITS": 7,
+    "EXPONENT_BIAS": 117,
+    "MODULE": None,
+    "KERNELS": {"compress": {}, "decompress": {}},
+}
 
 
+def configure(num_exponent_bits: int, exponent_bias: int) -> None:
+    """Dynamically compiles the CUDA kernels with custom mixed precision settings.
 
-cuda_source = f"""
+    This function is intended to be called by the model validator during configuration
+    unification before any compression or decompression occurs.
+    """
+    _CONFIG["NUM_EXPONENT_BITS"] = num_exponent_bits
+    _CONFIG["EXPONENT_BIAS"] = exponent_bias
+
+    cuda_source = f"""
 #include <cupy/complex.cuh>
-#define NUM_EXP_BITS {NUM_EXPONENT_BITS}
-#define EXPONENT_BIAS {EXPONENT_BIAS}
+#define NUM_EXP_BITS {num_exponent_bits}
+#define EXPONENT_BIAS {exponent_bias}
 
 template<int T>
 __global__
@@ -79,7 +73,7 @@ void _compress_impl(unsigned char* out, const complex<double>* inp, const size_t
 
                 if (biased_f <= 0) {{
                     // UNDERFLOW: Number is too small to represent.
-                    // Cut to zero (±0 depending on sign bit, which is preserved separately).
+                    // Cut to zero (+-0 depending on sign bit, which is preserved separately).
                     // No rounding applied - ensures exact zero encoding.
                     exp_f = 0;
                     mant_trunc = 0;
@@ -103,7 +97,7 @@ void _compress_impl(unsigned char* out, const complex<double>* inp, const size_t
             // Ensure exp_f never reaches all-1s (which encodes inf/nan)
             exp_f = min(exp_f, (1U << NUM_EXP_BITS) - 2);
             unsigned int sgn_exp = (static_cast<unsigned int>(sign) << NUM_EXP_BITS) | (exp_f & ((1U << NUM_EXP_BITS) - 1));
-            // Sign bit is always included to preserve ±0 distinction when underflowing to zero.
+            // Sign bit is always included to preserve +-0 distinction when underflowing to zero.
             packed_vals[v] = ((unsigned long long)sgn_exp << num_mantissa_bits) | (mant_trunc & ((1ULL << num_mantissa_bits) - 1));
         }}
 
@@ -190,8 +184,8 @@ void _decompress_impl(complex<double>* out, const unsigned char* inp, const size
             }}
             else{{
                 if (exp_f == 0) {{
-                    // ZERO/UNDERFLOW: Exact zero representation (±0 depending on sign bit).
-                    // Decompresses to ±0.0 in IEEE 754 double precision.
+                    // ZERO/UNDERFLOW: Exact zero representation (+-0 depending on sign bit).
+                    // Decompresses to +-0.0 in IEEE 754 double precision.
                     exp_d = 0;
                 }} else {{
                     exp_d = exp_f + (1023 - EXPONENT_BIAS);
@@ -231,21 +225,23 @@ extern "C" {{
     __global__ void _decompress_fp56(complex<double>* out, const unsigned char* inp, const size_t N) {{ _decompress_impl<56>(out, inp, N); }}
 }}
 """
+    bit_widths = [16, 20, 24, 28, 32, 36, 40, 48, 56]
+    _CONFIG["MODULE"] = cp.RawModule(code=cuda_source, options=("--std=c++17",))
+    _CONFIG["KERNELS"]["compress"] = {
+        b: _CONFIG["MODULE"].get_function(f"_compress_fp{b}") for b in bit_widths
+    }
+    _CONFIG["KERNELS"]["decompress"] = {
+        b: _CONFIG["MODULE"].get_function(f"_decompress_fp{b}") for b in bit_widths
+    }
 
-module = cp.RawModule(code=cuda_source, options=("--std=c++17",))
 
-_kernels = {
-    "compress": {
-        b: module.get_function(f"_compress_fp{b}") for b in [16, 20, 24, 28, 32, 36, 40, 48, 56]
-    },
-    "decompress": {
-        b: module.get_function(f"_decompress_fp{b}") for b in [16, 20, 24, 28, 32, 36, 40, 48, 56]
-    },
-}
+# Automatically build with global defaults on import
+configure(_CONFIG["NUM_EXPONENT_BITS"], _CONFIG["EXPONENT_BIAS"])
 
 
 def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     """Compresses complex128 data to a custom floating point format.
+
     It is specified by the number of bits where
     1 bit is for the sign, the exponent bits depend on the precision mode (8 bits for standard, 7 bits for narrow),
     and the rest of the bits are for the mantissa (taken from fp64).
@@ -267,25 +263,19 @@ def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     -------
     NDArray
         The compressed data as an array of unsigned bytes.
-
     """
-
-    # check input is complex128
     if inp.dtype != cp.complex128:
         raise ValueError(
             f"Input array must have dtype cp.complex128 but got {inp.dtype}."
         )
 
-    if bits not in _kernels["compress"].keys():
+    if bits not in _CONFIG["KERNELS"]["compress"]:
         raise ValueError(
-            f"Unsupported bit width: {bits}. Supported values are {list(_kernels['compress'].keys())}."
+            f"Unsupported bit width: {bits}. Supported values are {list(_CONFIG['KERNELS']['compress'].keys())}."
         )
 
     inp = cp.ascontiguousarray(inp)
-
     N = np.prod(inp.shape)
-    
-    # Calculate output size: (2*bits + 7) // 8 bytes per complex number
     num_output_bytes = (2 * bits + 7) // 8
 
     if out is None:
@@ -300,18 +290,12 @@ def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
                 f"Output array must have dtype cp.uint8 but got {out.dtype}."
             )
 
-    # check if the output array is contiguous
     if not out.flags["C_CONTIGUOUS"]:
         _out = cp.empty(out.shape, dtype=cp.uint8)
     else:
         _out = out
 
-    if not _out.flags["C_CONTIGUOUS"]:
-        raise ValueError("Must be contiguous")
-
-    if not inp.flags["C_CONTIGUOUS"]:
-        raise ValueError("Must be contiguous")
-    _kernels["compress"][bits](
+    _CONFIG["KERNELS"]["compress"][bits](
         ((N + BLOCK_SIZE - 1) // BLOCK_SIZE,), (BLOCK_SIZE,), (_out, inp, N)
     )
 
@@ -323,6 +307,7 @@ def compress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
 
 def decompress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     """Decompresses data from a custom floating point format to complex128.
+
     The custom floating point format is specified by the number of bits where
     1 bit is for the sign, the exponent bits depend on the precision mode (8 bits for standard, 7 bits for narrow),
     and the rest of the bits are for the mantissa (taken from fp64).
@@ -345,22 +330,17 @@ def decompress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     -------
     NDArray
         The decompressed data as an array of complex128 values.
-
     """
-
-    if bits not in _kernels["decompress"].keys():
+    if bits not in _CONFIG["KERNELS"]["decompress"]:
         raise ValueError(
-            f"Unsupported bit width: {bits}. Supported values are {list(_kernels['decompress'].keys())}."
+            f"Unsupported bit width: {bits}. Supported values are {list(_CONFIG['KERNELS']['decompress'].keys())}."
         )
 
     if inp.dtype != cp.uint8:
         raise ValueError(f"Input array must have dtype cp.uint8 but got {inp.dtype}.")
 
     inp = cp.ascontiguousarray(inp)
-
     N = np.prod(inp.shape[:-1])
-    
-    # Calculate expected input size: (2*bits + 7) // 8 bytes per complex number
     num_input_bytes = (2 * bits + 7) // 8
 
     if out is None:
@@ -383,10 +363,7 @@ def decompress(inp: NDArray, bits: int, out: NDArray | None = None) -> NDArray:
     if not out.flags["C_CONTIGUOUS"]:
         raise ValueError("Must be contiguous")
 
-    if not inp.flags["C_CONTIGUOUS"]:
-        raise ValueError("Must be contiguous")
-
-    _kernels["decompress"][bits](
+    _CONFIG["KERNELS"]["decompress"][bits](
         ((N + BLOCK_SIZE - 1) // BLOCK_SIZE,), (BLOCK_SIZE,), (out, inp, N)
     )
 
